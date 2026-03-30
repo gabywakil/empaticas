@@ -541,3 +541,24 @@ footer{
   font-size:10px;font-weight:300;
   color:var(--white);opacity:.2;margin-top:10px;
 }
+
+/* ── LOGO IMG ── */
+.site-header__logo-img {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* ── SPONSORS COMING SOON ── */
+.sponsors__coming {
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--beige);
+  opacity: .4;
+  text-align: center;
+  margin-bottom: 10px;
+  font-style: italic;
+}
