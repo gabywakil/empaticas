@@ -10,6 +10,76 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="../css/main.css"/>
   <link rel="stylesheet" href="../css/nosotras.css"/>
+  <style>
+    .profile__read-more { display: none; }
+    .profile__read-more.expanded { display: block; }
+
+    .profile__toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 8px;
+      margin-bottom: 20px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: var(--peony);
+      cursor: pointer;
+      border: none;
+      background: none;
+      padding: 0;
+      font-family: var(--sans);
+    }
+
+    .why-section {
+      background: var(--espresso);
+      padding: 48px 24px;
+      border-top: 4px solid var(--cream);
+    }
+    .why-section .eyebrow {
+      color: var(--peony-l);
+      opacity: .75;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .why-section h2 {
+      font-family: var(--serif);
+      font-size: 34px;
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+    .why-section h2 em {
+      font-style: italic;
+      color: var(--peony-l);
+    }
+    .why-section p {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--white);
+      opacity: .78;
+      line-height: 1.9;
+      margin-bottom: 16px;
+    }
+    .why-hidden { display: none; }
+    .why-hidden.expanded { display: block; }
+    .why-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 8px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: var(--peony-l);
+      cursor: pointer;
+      border: none;
+      background: none;
+      padding: 0;
+      font-family: var(--sans);
+    }
+  </style>
 </head>
 <body>
 
@@ -24,9 +94,10 @@
   <p>EM-PÁTICAS nació de la vulnerabilidad, de los errores cometidos y de la necesidad de un espacio donde las mujeres se sientan acompañadas — no juzgadas. Porque nosotras también estuvimos perdidas.</p>
 </div>
 
+<!-- ══ MARÍA ══ -->
 <article class="profile rv">
   <div class="profile__photo profile__photo--m">
-    <!-- <img src="../img/maria.jpg" alt="María"/> -->
+    <img src="../img/maria2.jpeg" alt="María"/>
     <span class="profile__ph-ghost">M</span>
     <div class="profile__photo-overlay"></div>
     <div class="profile__photo-info">
@@ -36,17 +107,28 @@
   </div>
   <div class="profile__body">
     <span class="profile__tag">Nutrición · Hormonas · Metabolismo</span>
-    <h2 class="profile__name">María</h2>
-    <p class="profile__title">Licenciada en Nutrición Deportiva, Clínica y Hormonal</p>
-    <p class="profile__bio">Especialista en endocrinología nutricional y metabolismo femenino. Combina la ciencia más actualizada con su propia experiencia para guiarte a entender tus hormonas sin culpa y sin restricciones.</p>
-    <p class="profile__bio">Porque ella también estuvo perdida. Y eso la hizo mejor profesional.</p>
+    <h2 class="profile__name">María del Valle</h2>
+    <p class="profile__title">Licenciada en Nutrición Deportiva, Clínica y Hormonal · 21 años</p>
+
+    <p class="profile__bio">Soy una apasionada incansable del bienestar integral. Desde muy joven sentí que Dios me había encomendado un propósito claro: servir y ayudar a otros. Mi labor no es solo mi profesión — es la manera en que honro el don de transformar vidas, brindando una mano amiga en el camino hacia la salud.</p>
+
+    <p class="profile__bio">Mi historia se escribe a través del movimiento. Desde el ballet y la natación hasta el tenis, el pádel y el entrenamiento de fuerza, el deporte ha sido mi escuela de disciplina. Esa misma entrega es la que hoy aplico en mis proyectos y en mi propia marca de productos saludables.</p>
+
+    <div class="profile__read-more" id="maria-more">
+      <p class="profile__bio">Estoy convencida de que el cuerpo es nuestra herramienta más sagrada y cuidarlo es un acto de gratitud. Como mujer emprendedora y dedicada al estudio, busco el equilibrio entre la ciencia y la fe. Cuando no estoy diseñando planes nutricionales, encuentro armonía en la cocina, el dibujo y el piano — pasiones que alimentan mi espíritu creativo.</p>
+      <p class="profile__bio">Hoy, mi compromiso es acompañarte a alcanzar tu máximo potencial. No creo en las restricciones — creo en una alimentación inteligente y sostenible que te permita habitar tu cuerpo con orgullo, salud y plenitud.</p>
+    </div>
+
+    <button class="profile__toggle" onclick="toggleSection('maria-more', this)">Leer más ↓</button>
+
     <a href="https://instagram.com/conmariabonita" target="_blank" class="profile__ig">@conmariabonita</a>
   </div>
 </article>
 
+<!-- ══ EMELY ══ -->
 <article class="profile rv d1">
   <div class="profile__photo profile__photo--e">
-    <!-- <img src="../img/emely.jpg" alt="Emely"/> -->
+    <img src="../img/emely.jpeg" alt="Emely"/>
     <span class="profile__ph-ghost">E</span>
     <div class="profile__photo-overlay"></div>
     <div class="profile__photo-info">
@@ -56,14 +138,40 @@
   </div>
   <div class="profile__body">
     <span class="profile__tag">Entrenamiento · Deporte · Rendimiento</span>
-    <h2 class="profile__name">Emely</h2>
-    <p class="profile__title">Entrenadora Certificada en Salud y Rendimiento Femenino</p>
-    <p class="profile__bio">Especialista en movimiento femenino. Te enseña a entrenar de forma inteligente, sincronizada con tu ciclo, para que tu cuerpo sea tu aliado y no tu enemigo.</p>
-    <p class="profile__bio">Porque el ejercicio no debería ser un castigo. Nunca.</p>
+    <h2 class="profile__name">Emely Nasr</h2>
+    <p class="profile__title">Entrenadora Certificada · Lcda. Comunicación Social · 25 años</p>
+
+    <p class="profile__bio">Me dedico a mi marca de Açaí Bowl y productos sin azúcar, promoviendo el movimiento y la buena alimentación a través de mi marca personal y laboral.</p>
+
+    <p class="profile__bio">Especialista en movimiento femenino y rendimiento físico. Te enseño a entrenar de forma inteligente, sincronizada con tu ciclo, para que tu cuerpo sea tu aliado y no tu enemigo. Porque el ejercicio no debería ser un castigo. Nunca.</p>
+
     <a href="https://instagram.com/fitwithemi_" target="_blank" class="profile__ig">@fitwithemi_</a>
   </div>
 </article>
 
+<!-- ══ POR QUÉ EM-PÁTICAS ══ -->
+<section class="why-section rv">
+  <span class="eyebrow">El origen</span>
+  <h2>El Porqué de<br/><em>"EM-PÁTICAS"</em></h2>
+
+  <p>"Este proyecto nació de una coincidencia... o quizás de una necesidad. Se llama Empática por la E de Emily y la M de María, pero sobre todo por la Empatía que sentimos la una por la otra al darnos cuenta de que compartíamos las mismas sombras: la ansiedad, la pérdida de nuestro ciclo hormonal y la lucha por recuperar el equilibrio."</p>
+
+  <p>"Entendimos que no estábamos solas, y hoy queremos que ustedes también sientan que este es un espacio seguro. No venimos a dar una clase fría; venimos a compartir nuestra experiencia con ustedes."</p>
+
+  <div class="why-hidden" id="why-more">
+    <p>"En las próximas horas, no solo vamos a navegar por conceptos técnicos; vamos a sumergirnos en la realidad de ser mujer hoy. Vamos a entender juntas qué sucede con nuestro cortisol cuando el mundo nos exige demasiado y el descanso se vuelve un lujo, y cómo incluso aquello que nuestra piel absorbe está enviando mensajes silenciosos a nuestras hormonas."</p>
+
+    <p>"Empática es una invitación a quitarse la máscara. Queremos hablar de lo que muchas veces nos da pena admitir: de ese diagnóstico de ansiedad o depresión que intentamos ocultar, de la frustración de ver cómo nuestro ciclo desaparece en una amenorrea que nos hace sentir desconectadas de nuestra propia naturaleza, o de la lucha contra el síndrome de ovario poliquístico y esos cambios en nuestro cuerpo que a veces no reconocemos frente al espejo."</p>
+
+    <p>"Este proyecto nació el día que dejamos de ser 'la nutricionista' y 'la especialista en fitness' para ser simplemente dos amigas que se apoyaron al descubrir que compartían las mismas batallas. En ella encontré ese espejo donde no me sentí juzgada, sino acompañada. Y eso es exactamente lo que les prometemos hoy: que al escucharnos, descubran que no están solas."</p>
+
+    <p>"Queremos que se lleven herramientas científicas y reales para su día a día, pero sobre todo, que al salir de aquí se sientan nutridas desde el alma. Porque hemos aprendido que la verdadera salud es la libertad de conocer tu cuerpo, la paz mental de aceptarte y la fuerza de saber que, en este camino, caminamos juntas."</p>
+  </div>
+
+  <button class="why-toggle" onclick="toggleSection('why-more', this)">Leer más ↓</button>
+</section>
+
+<!-- ══ CLOSING ══ -->
 <div class="closing rv">
   <span class="closing__line"></span>
   <p class="closing__text">"Creamos EM-PÁTICAS porque nosotras también estuvimos perdidas. Porque cometimos errores. Porque nadie nos explicó cómo funciona nuestro cuerpo.<em> Hoy somos ese espacio que necesitábamos."</em></p>
@@ -75,5 +183,12 @@
 </div>
 
 <script src="../js/reveal.js"></script>
+<script>
+function toggleSection(id, btn) {
+  const el = document.getElementById(id);
+  el.classList.toggle('expanded');
+  btn.textContent = el.classList.contains('expanded') ? 'Leer menos ↑' : 'Leer más ↓';
+}
+</script>
 </body>
 </html>
