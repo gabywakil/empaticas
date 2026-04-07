@@ -562,3 +562,19 @@ footer{
   margin-bottom: 10px;
   font-style: italic;
 }
+
+/* ── AJUSTE FOTOS HERO (MEJOR ENCUADRE) ── */
+.hero__photo--m img{
+  object-position: center 10%;
+  transform: scale(1.08);
+}
+
+.hero__photo--e img{
+  object-position: center 15%;
+}
+
+
+/* ── LOGO MÁS GRANDE ── */
+.site-header__logo-img {
+  height: 48px; /* antes 36px */
+}
