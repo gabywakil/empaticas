@@ -49,7 +49,7 @@ _Evento: 25 de Abril 2026 · La Wawa · Lechería_`;
 
   // 👇 SELECTOR DE CONTACTO
   const opcion = prompt(
-    "¿A quién deseas escribir?\n\n1. María\n2. Emely \n\nEscriba el número"
+    "¿A quién deseas escribir?\n\nEscribe el número:\n\n1 = María\n2 = Emely"
   );
 
   let numero = '';
