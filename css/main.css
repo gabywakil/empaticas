@@ -612,3 +612,29 @@ img{
 .site-header__logo-img {
   height: 64px;
 }
+
+/* ── SPONSORS LOGOS GRID ── */
+.sponsors__list{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  align-items: center;
+  justify-items: center;
+  margin-top: 20px;
+}
+
+.sponsors__list img{
+  width: 80px;
+  height: auto;
+  object-fit: contain;
+  opacity: .7;
+  filter: grayscale(100%);
+  transition: all .3s ease;
+}
+
+/* hover elegante */
+.sponsors__list img:hover{
+  opacity: 1;
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
