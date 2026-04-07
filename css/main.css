@@ -563,18 +563,52 @@ footer{
   font-style: italic;
 }
 
-/* ── AJUSTE FOTOS HERO (MEJOR ENCUADRE) ── */
-.hero__photo--m img{
-  object-position: center 40%;
-  transform: scale(1.08);
+/* ── HERO IMAGES FIX (PRO LEVEL) ── */
+.hero__photo img{
+  object-fit: cover;
+  height: 100%;
 }
 
+/* María (izquierda) MÁS CERCA */
+.hero__photo--m img{
+  object-position: center 5%;
+  transform: scale(1.15);
+}
+
+/* Emely (derecha) balance */
 .hero__photo--e img{
   object-position: center 15%;
+  transform: scale(1.05);
 }
 
+/* ── FIX GLOBAL IMG SOLO HERO ── */
+img{
+  height: auto; /* 👈 esto arregla TODO */
+}
 
-/* ── LOGO MÁS GRANDE ── */
+/* ── FOOTER SIGNATURE PRO ── */
+.footer__signature{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer__signature img{
+  width: 40px;   /* 👈 tamaño correcto */
+  height: auto;
+  object-fit: contain;
+  opacity: .85;
+}
+
+.footer__signature span{
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--white);
+  opacity: .4;
+}
+
 .site-header__logo-img {
-  height: 48px; /* antes 36px */
+  height: 44px;
 }
