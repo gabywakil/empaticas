@@ -571,7 +571,7 @@ footer{
 
 /* María (izquierda) MÁS CERCA */
 .hero__photo--m img{
-  object-position: center 5%;
+  object-position: center 15%;
   transform: scale(1.15);
 }
 
