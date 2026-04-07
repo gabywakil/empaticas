@@ -1,21 +1,38 @@
-// form.js — ⚠️ Cambia WA al número real
-const WA='584121234567';
+// form.js — WhatsApp selector dinámico
 
-document.getElementById('submitBtn')?.addEventListener('click',()=>{
-  const req=['nombre','tel','edad','ciudad','desayuno','llegaste'];
-  let ok=true;
-  req.forEach(id=>{
-    const el=document.getElementById(id);
-    if(!el)return;
+document.getElementById('submitBtn')?.addEventListener('click', () => {
+
+  const req = ['nombre','tel','edad','ciudad','desayuno','llegaste'];
+  let ok = true;
+
+  req.forEach(id => {
+    const el = document.getElementById(id);
+    if(!el) return;
+
     el.classList.remove('err');
-    if(!el.value.trim()){el.classList.add('err');setTimeout(()=>el.classList.remove('err'),900);ok=false;}
+
+    if(!el.value.trim()){
+      el.classList.add('err');
+      setTimeout(() => el.classList.remove('err'), 900);
+      ok = false;
+    }
   });
-  if(!ok){document.querySelector('.err')?.scrollIntoView({behavior:'smooth',block:'center'});return;}
 
-  const v=id=>document.getElementById(id)?.value.trim()||'';
-  const sel=id=>{const el=document.getElementById(id);return el?.value?el.options[el.selectedIndex].text:'No especificado';};
+  if(!ok){
+    document.querySelector('.err')?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center'
+    });
+    return;
+  }
 
-  const msg=`✨ *INSCRIPCIÓN EM-PÁTICAS — Edición 1*
+  const v = id => document.getElementById(id)?.value.trim() || '';
+  const sel = id => {
+    const el = document.getElementById(id);
+    return el?.value ? el.options[el.selectedIndex].text : 'No especificado';
+  };
+
+  const msg = `✨ *INSCRIPCIÓN EM-PÁTICAS — Edición 1*
 
 *Nombre:* ${v('nombre')}
 *Teléfono:* ${v('tel')}
@@ -30,14 +47,35 @@ ${v('llegaste')}
 
 _Evento: 25 de Abril 2026 · La Wawa · Lechería_`;
 
-  const btn=document.getElementById('submitBtn');
-  const span=btn.querySelector('span');
-  span.textContent='¡Abriendo WhatsApp...';
-  btn.style.opacity='.65';btn.style.pointerEvents='none';
+  // 👇 SELECTOR DE CONTACTO
+  const opcion = prompt(
+    "¿A quién deseas escribir?\n\n1. María\n2. Emely"
+  );
 
-  setTimeout(()=>{
-    window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`,'_blank');
-    span.textContent='Enviar por WhatsApp';
-    btn.style.opacity='';btn.style.pointerEvents='';
-  },500);
+  let numero = '';
+
+  if(opcion === '1'){
+    numero = '584141944115'; // María
+  } else if(opcion === '2'){
+    numero = '584248690086'; // Emely
+  } else {
+    alert('Selección inválida');
+    return;
+  }
+
+  const btn = document.getElementById('submitBtn');
+  const span = btn.querySelector('span');
+
+  span.textContent = '¡Abriendo WhatsApp...';
+  btn.style.opacity = '.65';
+  btn.style.pointerEvents = 'none';
+
+  setTimeout(() => {
+    window.open(`https://wa.me/${numero}?text=${encodeURIComponent(msg)}`, '_blank');
+
+    span.textContent = 'Enviar por WhatsApp';
+    btn.style.opacity = '';
+    btn.style.pointerEvents = '';
+  }, 500);
+
 });
