@@ -565,7 +565,7 @@ footer{
 
 /* ── AJUSTE FOTOS HERO (MEJOR ENCUADRE) ── */
 .hero__photo--m img{
-  object-position: center 10%;
+  object-position: center 20%;
   transform: scale(1.08);
 }
 
