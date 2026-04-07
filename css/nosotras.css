@@ -152,3 +152,8 @@
 }
 
 .cta-wrap{padding:0 24px 48px;background:var(--espresso)}
+
+.profile__photo--m img{
+  object-position: center 8%;
+  transform: scale(1.04);
+}
