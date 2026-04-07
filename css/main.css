@@ -572,7 +572,7 @@ footer{
 /* María (izquierda) MÁS CERCA */
 .hero__photo--m img{
   object-position: center 15%;
-  transform: scale(1.15);
+  transform: scale(1.35);
 }
 
 /* Emely (derecha) balance */
@@ -610,5 +610,5 @@ img{
 }
 
 .site-header__logo-img {
-  height: 44px;
+  height: 64px;
 }
