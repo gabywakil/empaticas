@@ -641,7 +641,7 @@ img{
   object-fit: contain;
 
   max-width: 220px;   /* 👈 antes era pequeño */
-  max-height: 70px;   /* 👈 aumenta altura */
+  max-height: 100px;   /* 👈 aumenta altura */
 }
 
 /* hover elegante */
