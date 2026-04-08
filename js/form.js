@@ -1,6 +1,10 @@
-// form.js — WhatsApp selector dinámico
+// form.js — compatible con Safari/iPhone
 
-document.getElementById('submitBtn')?.addEventListener('click', () => {
+const btn = document.getElementById('submitBtn');
+
+btn?.addEventListener('click', function (e) {
+  e.preventDefault();
+
   const req = ['nombre', 'tel', 'edad', 'ciudad', 'desayuno', 'llegaste'];
   let ok = true;
 
@@ -53,32 +57,26 @@ _Evento: 25 de Abril 2026 · La Wawa · Lechería_`;
   let numero = '';
 
   if (opcion === '1') {
-    numero = '584141944115'; // María
+    numero = '584141944115';
   } else if (opcion === '2') {
-    numero = '584248690086'; // Emely
+    numero = '584248690086';
   } else {
     alert('Selección inválida');
     return;
   }
 
-  const btn = document.getElementById('submitBtn');
-  const span = btn?.querySelector('span');
-
+  const span = btn.querySelector('span');
   if (span) span.textContent = 'Abriendo WhatsApp...';
-  if (btn) {
-    btn.style.opacity = '.65';
-    btn.style.pointerEvents = 'none';
-  }
+  btn.style.opacity = '.65';
+  btn.style.pointerEvents = 'none';
 
-  const waUrl = `https://wa.me/${numero}?text=${encodeURIComponent(msg)}`;
+  const url = `https://api.whatsapp.com/send?phone=${numero}&text=${encodeURIComponent(msg)}`;
 
-  window.location.href = waUrl;
+  window.location.assign(url);
 
   setTimeout(() => {
     if (span) span.textContent = 'Enviar por WhatsApp';
-    if (btn) {
-      btn.style.opacity = '';
-      btn.style.pointerEvents = '';
-    }
-  }, 1200);
+    btn.style.opacity = '';
+    btn.style.pointerEvents = '';
+  }, 1500);
 });
