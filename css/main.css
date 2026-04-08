@@ -624,13 +624,15 @@ img{
 }
 
 .sponsors__list img{
-  max-width: 90px;
-  max-height: 45px;
+  max-width: 100px;
+  max-height: 50px;
   object-fit: contain;
-  padding: 10px;
 
-  background: rgba(255,255,255,0.6); /* 👈 fondo suave */
-  border-radius: 10px;
+  background: #ffffff; /* blanco limpio */
+  padding: 14px;
+  border-radius: 12px;
+
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08); /* 👈 más contraste */
 }
 
 /* hover elegante */
