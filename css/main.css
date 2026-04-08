@@ -635,6 +635,15 @@ img{
   box-shadow: 0 6px 18px rgba(0,0,0,0.08); /* 👈 más contraste */
 }
 
+.sponsor img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+
+  max-width: 120px;   /* 👈 antes era pequeño */
+  max-height: 70px;   /* 👈 aumenta altura */
+}
+
 /* hover elegante */
 .sponsors__list img:hover{
   opacity: 1;
