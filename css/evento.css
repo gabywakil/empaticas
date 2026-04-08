@@ -220,3 +220,25 @@
   color:var(--espresso2);opacity:.4;line-height:1.65;
   margin-top:14px;
 }
+
+/* ── SPONSORS LOGOS GRID ── */
+.sponsors__list{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  align-items: center;
+  justify-items: center;
+  margin-top: 20px;
+}
+
+.sponsors__list img{
+  max-width: 100px;
+  max-height: 50px;
+  object-fit: contain;
+
+  background: #c7ab95; /* blanco limpio */
+  padding: 14px;
+  border-radius: 12px;
+
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08); /* 👈 más contraste */
+}
