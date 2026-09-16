@@ -171,9 +171,8 @@
 
 <script src="../js/reveal.js"></script>
 <script>
-// ⚠️ Cambia por los números reales de WhatsApp
-const WA_MARIA = '584121234567';
-const WA_EMELY = '584121234568';
+// form wellness — mismo patrón que form.js (modal Safari/iPhone-safe)
+const btn = document.getElementById('submitBtn');
 
 function selectTime(time, el) {
   document.querySelectorAll('.wc-schedule__time').forEach(t => t.classList.remove('active'));
@@ -181,19 +180,79 @@ function selectTime(time, el) {
   document.getElementById('horario').value = time;
 }
 
-document.getElementById('submitBtn').addEventListener('click', () => {
-  const req = ['nombre','tel','edad','ciudad','horario'];
+// Crear modal de selección (idéntico a form.js)
+function crearModal(onSelect) {
+  const overlay = document.createElement('div');
+  overlay.style.cssText = `
+    position:fixed;inset:0;background:rgba(0,0,0,.55);
+    display:flex;align-items:center;justify-content:center;
+    z-index:9999;font-family:inherit;
+  `;
+
+  overlay.innerHTML = `
+    <div style="background:#fff;border-radius:16px;padding:28px 24px;
+                max-width:300px;width:90%;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,.18)">
+      <p style="margin:0 0 20px;font-size:1rem;font-weight:600;color:#111">
+        ¿A quién deseas escribir?
+      </p>
+      <button data-num="584141944115"
+        style="display:block;width:100%;padding:12px;margin-bottom:10px;
+               border:none;border-radius:10px;background:#25D366;color:#fff;
+               font-size:1rem;cursor:pointer;font-weight:500">
+        📲 María
+      </button>
+      <button data-num="584248690086"
+        style="display:block;width:100%;padding:12px;
+               border:none;border-radius:10px;background:#128C7E;color:#fff;
+               font-size:1rem;cursor:pointer;font-weight:500">
+        📲 Emely
+      </button>
+      <button id="cancelarModal"
+        style="display:block;width:100%;padding:10px;margin-top:12px;
+               border:1px solid #ccc;border-radius:10px;background:transparent;
+               color:#666;font-size:.9rem;cursor:pointer">
+        Cancelar
+      </button>
+    </div>
+  `;
+
+  document.body.appendChild(overlay);
+
+  overlay.querySelectorAll('[data-num]').forEach(b => {
+    b.addEventListener('click', () => {
+      document.body.removeChild(overlay);
+      onSelect(b.dataset.num);
+    });
+  });
+
+  overlay.querySelector('#cancelarModal').addEventListener('click', () => {
+    document.body.removeChild(overlay);
+  });
+}
+
+btn?.addEventListener('click', function (e) {
+  e.preventDefault();
+
+  // Validación
+  const req = ['nombre', 'tel', 'edad', 'ciudad', 'horario'];
   let ok = true;
   req.forEach(id => {
     const el = document.getElementById(id);
-    if(!el) return;
+    if (!el) return;
     el.classList.remove('err');
-    if(!el.value.trim()){el.classList.add('err');setTimeout(()=>el.classList.remove('err'),900);ok=false;}
+    if (!el.value.trim()) {
+      el.classList.add('err');
+      setTimeout(() => el.classList.remove('err'), 900);
+      ok = false;
+    }
   });
-  if(!ok){document.querySelector('.err')?.scrollIntoView({behavior:'smooth',block:'center'});return;}
+  if (!ok) {
+    document.querySelector('.err')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
 
-  const v = id => document.getElementById(id)?.value.trim()||'';
-
+  // Armar mensaje
+  const v = id => document.getElementById(id)?.value.trim() || '';
   const msg = `✨ *INSCRIPCIÓN EM-PÁTICAS WELLNESS CLUB*
 *Toque Edition*
 
@@ -205,22 +264,36 @@ document.getElementById('submitBtn').addEventListener('click', () => {
 *Horario de Pilates:* ${v('horario')}
 
 *¿Cómo se enteró?*
-${v('llegaste')||'No especificado'}
+${v('llegaste') || 'No especificado'}
 
 _Precio: $18 a tasa BCV_
 _Lugar: El Toque · Lechería_
 _Llegada desde las 5:30 pm_`;
 
-  const btn = document.getElementById('submitBtn');
-  const span = btn.querySelector('span');
-  span.textContent = '¡Abriendo WhatsApp...';
-  btn.style.opacity='.65';btn.style.pointerEvents='none';
+  // Mostrar modal (mismo patrón que form.js)
+  crearModal(function (numero) {
+    const url = `https://api.whatsapp.com/send?phone=${numero}&text=${encodeURIComponent(msg)}`;
 
-  setTimeout(()=>{
-    window.open(`https://wa.me/${WA_MARIA}?text=${encodeURIComponent(msg)}`,'_blank');
-    span.textContent='Enviar por WhatsApp';
-    btn.style.opacity='';btn.style.pointerEvents='';
-  },500);
+    // Safari-safe: <a> invisible con click() dentro del handler del usuario
+    const a = document.createElement('a');
+    a.href = url;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+
+    const span = btn.querySelector('span');
+    if (span) span.textContent = 'Abriendo WhatsApp...';
+    btn.style.opacity = '.65';
+    btn.style.pointerEvents = 'none';
+
+    setTimeout(() => {
+      if (span) span.textContent = 'Enviar por WhatsApp';
+      btn.style.opacity = '';
+      btn.style.pointerEvents = '';
+    }, 1500);
+  });
 });
 </script>
 </body>
