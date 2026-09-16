@@ -1,5 +1,5 @@
 // countdown.js
-const D=new Date('2026-09-27T06:00:00');
+const D=new Date('2026-09-27T18:00:00');
 const p=n=>String(n).padStart(2,'0');
 function tick(){
   const d=D-new Date(); if(d<=0)return;
