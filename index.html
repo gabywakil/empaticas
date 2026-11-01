@@ -1,235 +1,290 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
-  <meta name="theme-color" content="#F5EFE6"/>
-  <title>EM-PÁTICAS — El Poder de Entenderte</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="css/main.css"/>
-</head>
-<body>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#7c0116">
+<title>EM-PÁTICAS · el arte de sentirte comprendida</title>
+<link rel="icon" type="image/png" href="img/gw-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Mrs+Saint+Delafield&family=Rubik:wght@800&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<link rel="stylesheet" href="css/retro.css">
+<style>
+.nav-links a.cur{opacity:1;text-decoration:underline;text-underline-offset:5px}
+.evt-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.chip{display:inline-block;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;border:1.5px solid currentColor;border-radius:999px;padding:.55em 1.1em}
+.don{display:inline-flex;align-items:center;gap:10px;margin-top:6px;padding:10px 18px;border:2px dashed var(--cotton);border-radius:999px;color:var(--cotton);font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+.don svg{width:16px;height:16px;--a:var(--cotton)}
+.ev-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(32px,6vw,96px);align-items:center}
+.ev-art{position:relative;max-width:460px;width:100%;margin-inline:auto}
+.ev-art .arch-wrap::before{inset:-16px 16px 0 -16px;--s1:var(--hibiscus);--s2:var(--cherry)}
+.ev-art .polaroid{--w:44%;right:-8%;bottom:-6%;rotate:6deg;z-index:4}
+.ev-title{font-family:var(--serif);font-weight:400;line-height:.92;font-size:clamp(3rem,8vw,6.2rem);letter-spacing:-.02em}
+.ev-title em{color:var(--em)}
+.ev-title .script{display:block;font-size:.62em;margin-top:.1em}
+.nos-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:center}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,2vw,24px);position:relative;max-width:520px;margin-inline:auto;width:100%}
+.duo .ph{--r:3/4.4;--rd:200px 200px 14px 14px}
+.duo .ph:nth-child(2){margin-top:34px}
+.duo .nm{display:block;text-align:center;margin-top:12px;font-family:var(--serif);font-size:1.7rem;line-height:1}
+.duo .nm small{display:block;font:500 10px/1.5 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--em);margin-top:4px}
+.quote{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.3rem);line-height:1.2;margin-top:22px;max-width:30ch}
+.kit-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(20px,3vw,44px);margin-top:36px;position:relative;z-index:2}
+.kit-cards .card p small{display:block;opacity:.8}
+.snackbar{margin-top:30px;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;padding:16px 20px;border:2px dashed var(--cherry);border-radius:18px;position:relative;z-index:2}
+.snackbar b{font-family:var(--serif);font-weight:400;font-size:1.5rem;line-height:1}
+.past-card{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:var(--lemon);border:2px solid var(--cola);border-radius:6px;box-shadow:8px 8px 0 var(--cola);overflow:hidden}
+.past-card header{grid-column:1/-1;background:var(--cherry);color:var(--lemon);padding:22px 26px 16px;display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.past-card header h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.9rem,3.6vw,3rem);line-height:1}
+.past-card header span{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--cotton)}
+.past-card .l,.past-card .r{padding:24px 26px 28px}
+.past-card .r{background:rgba(255,215,231,.5);border-left:2px dashed rgba(71,19,28,.35)}
+.past-card h4{font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--cherry);margin-bottom:10px}
+.past-card .facts2{display:grid;gap:12px}
+.past-card .facts2 dt{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--cherry)}
+.past-card .facts2 dd{font-family:var(--serif);font-size:1.35rem;line-height:1.1}
+.past-card .chips{display:flex;flex-wrap:wrap;gap:8px}
+.past-card .chips span{font-size:10px;letter-spacing:.14em;text-transform:uppercase;border:1.5px solid var(--cola);border-radius:999px;padding:.5em 1em;background:var(--lemon)}
+.spons{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:36px;position:relative;z-index:2}
+.spons div{background:var(--white);border:2px solid var(--cola);border-radius:14px;aspect-ratio:3/2;display:grid;place-items:center;padding:14px;box-shadow:4px 4px 0 var(--cola);transition:transform .25s,box-shadow .25s}
+.spons div:hover{transform:translate(-2px,-2px) rotate(-1deg);box-shadow:7px 7px 0 var(--cola)}
+.spons img{max-width:100%;max-height:100%;object-fit:contain}
+.pg-hero{padding-top:150px;padding-bottom:70px}
+.pg-hero h1{font-family:var(--serif);font-weight:400;line-height:.9;font-size:clamp(3.4rem,10vw,8rem);letter-spacing:-.025em;margin-top:18px}
+.pg-hero h1 em{color:var(--em)}
+.manif{font-family:var(--serif);font-size:clamp(1.4rem,2.8vw,2.1rem);line-height:1.25;max-width:34ch;margin-top:26px}
+.bio-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,6vw,90px);align-items:start}
+.bio-grid.rev{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr)}
+.bio-grid.rev .bio-art{order:2}
+.bio-art{position:sticky;top:96px}
+.bio-art .arch-wrap::before{inset:-14px 14px 0 -14px}
+.bio-art .ph{--r:3/4.2;--rd:999px 999px 0 0}
+.bio-body .tag{margin-bottom:16px}
+.bio-body h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.4rem,5vw,4rem);line-height:.95}
+.bio-body .ttl{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--em);margin:10px 0 18px}
+.bio-body p{color:var(--muted);max-width:56ch;margin-bottom:14px}
+.more{display:none}.more.open{display:block}
+.tgl{font:500 11px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;background:none;border:0;border-bottom:1.5px solid currentColor;padding:4px 0;color:var(--em);cursor:pointer;margin:6px 0 18px}
+.why-p{max-width:62ch;margin-bottom:16px;color:var(--muted)}
+.sec-dark .why-p{color:var(--muted)}
+@media (max-width:900px){.ev-grid,.nos-grid,.bio-grid,.bio-grid.rev{grid-template-columns:1fr}.bio-art{position:static;max-width:380px;margin-inline:auto}.bio-grid.rev .bio-art{order:0}.kit-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.spons{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:640px){.pg-hero .stk{display:none}.nav-links a:not(.pill){display:none}.past-card{grid-template-columns:1fr}.past-card .r{border-left:0;border-top:2px dashed rgba(71,19,28,.35)}.kit-cards{grid-template-columns:1fr}.spons{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
-<!-- HEADER -->
-<header class="site-header">
-  <img src="img/logo.png" alt="EM-PÁTICAS" class="site-header__logo-img"/>
-  <a href="pages/wellness.html" class="site-header__cta">Inscríbete</a>
+</style>
+</head>
+<body data-base="">
+<!-- Sprite de stickers -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="s-spark" viewBox="0 0 100 100"><path style="fill:var(--a)" d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z"/></symbol>
+    <symbol id="s-heart" viewBox="0 0 100 100"><path style="fill:var(--a)" d="M50 92C8 62 0 38 13 22C26 8 44 14 50 30C56 14 74 8 87 22C100 38 92 62 50 92Z"/><path style="fill:none;stroke:var(--b)" stroke-width="5" stroke-linecap="round" d="M22 31C26 25 34 24 39 29"/></symbol>
+    <symbol id="s-daisy" viewBox="0 0 100 100"><g style="fill:var(--a)"><ellipse cx="50" cy="21" rx="13" ry="21" transform="rotate(0 50 50)"/><ellipse cx="50" cy="21" rx="13" ry="21" transform="rotate(45 50 50)"/><ellipse cx="50" cy="21" rx="13" ry="21" transform="rotate(90 50 50)"/><ellipse cx="50" cy="21" rx="13" ry="21" transform="rotate(135 50 50)"/><ellipse cx="50" cy="21" rx="13" ry="21" transform="rotate(180 50 50)"/><ellipse cx="50" cy="21" rx="13" ry="21" transform="rotate(225 50 50)"/><ellipse cx="50" cy="21" rx="13" ry="21" transform="rotate(270 50 50)"/><ellipse cx="50" cy="21" rx="13" ry="21" transform="rotate(315 50 50)"/></g><circle cx="50" cy="50" r="17" style="fill:var(--d,#ffe58a)"/></symbol>
+    <symbol id="s-smile" viewBox="0 0 100 100"><g style="fill:var(--a)"><ellipse cx="50" cy="21" rx="13" ry="21" transform="rotate(0 50 50)"/><ellipse cx="50" cy="21" rx="13" ry="21" transform="rotate(45 50 50)"/><ellipse cx="50" cy="21" rx="13" ry="21" transform="rotate(90 50 50)"/><ellipse cx="50" cy="21" rx="13" ry="21" transform="rotate(135 50 50)"/><ellipse cx="50" cy="21" rx="13" ry="21" transform="rotate(180 50 50)"/><ellipse cx="50" cy="21" rx="13" ry="21" transform="rotate(225 50 50)"/><ellipse cx="50" cy="21" rx="13" ry="21" transform="rotate(270 50 50)"/><ellipse cx="50" cy="21" rx="13" ry="21" transform="rotate(315 50 50)"/></g><circle cx="50" cy="50" r="23" style="fill:var(--d,#ffe58a)"/><circle cx="42" cy="45" r="3.2" style="fill:var(--c)"/><circle cx="58" cy="45" r="3.2" style="fill:var(--c)"/><path d="M39 55Q50 67 61 55" style="fill:none;stroke:var(--c)" stroke-width="3.4" stroke-linecap="round"/></symbol>
+    <symbol id="s-cherry" viewBox="0 0 100 100"><path d="M30 62C34 40 46 22 62 12M70 66C70 44 66 26 62 12" style="fill:none;stroke:var(--c)" stroke-width="4" stroke-linecap="round"/><ellipse cx="68" cy="13" rx="15" ry="7" transform="rotate(-22 68 13)" style="fill:var(--b)"/><circle cx="30" cy="72" r="21" style="fill:var(--a)"/><circle cx="70" cy="76" r="19" style="fill:var(--a)"/><circle cx="23" cy="65" r="5" fill="#fff" opacity=".55"/><circle cx="64" cy="69" r="4.5" fill="#fff" opacity=".55"/></symbol>
+    <symbol id="s-lemon" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" style="fill:var(--a)"/><circle cx="50" cy="50" r="38" style="fill:var(--b)"/><g style="stroke:var(--a)" stroke-width="3.2" stroke-linecap="round"><path d="M50 14V86M14 50H86M25 25L75 75M75 25L25 75"/></g><circle cx="50" cy="50" r="5" style="fill:var(--a)"/></symbol>
+    <symbol id="s-burst" viewBox="0 0 100 100"><polygon style="fill:var(--a)" points="50.0,0.0 58.4,7.8 69.1,3.8 73.9,14.2 85.4,14.6 85.8,26.1 96.2,30.9 92.2,41.6 100.0,50.0 92.2,58.4 96.2,69.1 85.8,73.9 85.4,85.4 73.9,85.8 69.1,96.2 58.4,92.2 50.0,100.0 41.6,92.2 30.9,96.2 26.1,85.8 14.6,85.4 14.2,73.9 3.8,69.1 7.8,58.4 0.0,50.0 7.8,41.6 3.8,30.9 14.2,26.1 14.6,14.6 26.1,14.2 30.9,3.8 41.6,7.8"/></symbol>
+    <symbol id="s-scallop" viewBox="0 0 100 100"><g style="fill:var(--a)"><circle cx="86.0" cy="50.0" r="13"/><circle cx="81.2" cy="68.0" r="13"/><circle cx="68.0" cy="81.2" r="13"/><circle cx="50.0" cy="86.0" r="13"/><circle cx="32.0" cy="81.2" r="13"/><circle cx="18.8" cy="68.0" r="13"/><circle cx="14.0" cy="50.0" r="13"/><circle cx="18.8" cy="32.0" r="13"/><circle cx="32.0" cy="18.8" r="13"/><circle cx="50.0" cy="14.0" r="13"/><circle cx="68.0" cy="18.8" r="13"/><circle cx="81.2" cy="32.0" r="13"/><circle cx="50" cy="50" r="38"/></g></symbol>
+    <symbol id="s-dumb" viewBox="0 0 100 100"><g transform="rotate(-25 50 50)"><rect x="30" y="45" width="40" height="10" rx="5" style="fill:var(--c)"/><rect x="12" y="29" width="13" height="42" rx="6" style="fill:var(--a)"/><rect x="24" y="35" width="9" height="30" rx="4.5" style="fill:var(--b)"/><rect x="67" y="35" width="9" height="30" rx="4.5" style="fill:var(--b)"/><rect x="75" y="29" width="13" height="42" rx="6" style="fill:var(--a)"/></g></symbol>
+  </defs>
+</svg>
+
+
+<div id="progress" aria-hidden="true"></div>
+<div id="trail" aria-hidden="true"></div>
+<nav class="nav" aria-label="Principal">
+  <a class="nav-logo" href="index.html"><svg viewBox="0 0 100 100" style="--a:var(--hibiscus)"><use href="#s-spark"/></svg>EM-PÁTICAS</a>
+  <div class="nav-links">
+    <a href="index.html#evento">Evento</a>
+    <a href="pages/nosotras.html">Nosotras</a>
+    <a href="index.html#pasados">Eventos pasados</a>
+    <a href="index.html#aliadas">Aliadas</a>
+    <a class="pill" href="pages/wellness.html">Inscríbete</a>
+  </div>
+</nav>
+
+<main>
+
+<header class="hero sec-light" id="top">
+  <div class="awning" style="--w:34px;--s1:var(--cherry);--s2:var(--cotton)" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero-meta">
+      <span>Wellness Club</span><i class="rule"></i>
+      <span class="hero-meta-r">Lechería<br>Venezuela</span>
+    </div>
+    <div class="hero-grid">
+      <h1 class="hero-title"><span class="line"><span class="chars">EM-PÁTICAS</span></span></h1>
+      <div class="hero-copy">
+        <p class="script" data-hero>el arte de sentirte <span class="ul" data-ul>comprendida</span></p>
+        <p class="lead lead-big" data-hero>Un espacio creado por María y Emily para mujeres que quieren entender su cuerpo, su salud y sentirse acompañadas, no juzgadas.</p>
+        <div class="hero-actions" data-hero>
+          <a class="pill solid" href="#evento">Ver el evento</a>
+          <a class="pill ghost" href="#nosotras">Quiénes somos</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="arch-wrap" data-depth="16"><div class="arch">
+          <div class="ph" data-label="FOTO · María" data-src="img/maria.jpeg" style="--r:3/4.1"><div class="ph-in"></div></div>
+        </div></div>
+        <div class="badge" data-depth="34" aria-hidden="true">
+          <svg viewBox="0 0 200 200">
+            <defs><path id="circ" d="M100,100 m-70,0 a70,70 0 1,1 140,0 a70,70 0 1,1 -140,0"/></defs>
+            <circle cx="100" cy="100" r="98" fill="#7c0116"/>
+            <circle cx="100" cy="100" r="93" fill="none" stroke="#ffd7e7" stroke-width="1.2" stroke-dasharray="2 5"/>
+            <text font-family="DM Mono, monospace" font-size="13" letter-spacing="3" fill="#fffde9"><textPath href="#circ" textLength="430" lengthAdjust="spacing">WELLNESS CLUB ✦ EM-PÁTICAS ✦ LECHERÍA ✦ </textPath></text>
+          </svg>
+          <span class="badge-core"><svg viewBox="0 0 100 100" style="--a:var(--cotton)"><use href="#s-heart"/></svg></span>
+        </div>
+        <figure class="polaroid tape" data-depth="52">
+          <div class="ph" data-label="FOTO · Emily" data-src="img/emely.jpeg" style="--r:1/1"><div class="ph-in"></div></div>
+          <figcaption>Emily</figcaption>
+        </figure>
+        <span class="stk k-pink" style="left:-19%;top:0%;--sz:clamp(64px,9vw,120px)"><svg class="a-float" style="--dur:7s" viewBox="0 0 100 100"><use href="#s-smile"/></svg></span>
+        <span class="stk k-cherry" style="right:-6%;bottom:-7%;--sz:clamp(58px,8vw,100px)"><svg class="a-float" style="--dur:5.5s;--dl:-1.5s" viewBox="0 0 100 100"><use href="#s-cherry"/></svg></span>
+        <span class="stk k-hib" style="right:-10%;top:44%;--sz:clamp(34px,5vw,62px)"><svg class="a-wob"  viewBox="0 0 100 100"><use href="#s-heart"/></svg></span>
+        <span class="stk k-lemon" style="left:-12%;top:46%;--sz:clamp(46px,6.5vw,84px)"><svg class="a-spin" style="--dur:30s" viewBox="0 0 100 100"><use href="#s-lemon"/></svg></span>
+        <span class="stk k-sky plain" style="left:34%;top:-7%;--sz:clamp(22px,3vw,36px)"><svg class="a-twink"  viewBox="0 0 100 100"><use href="#s-spark"/></svg></span>
+      </div>
+    </div>
+  </div>
 </header>
 
-  <!-- HERO (EVENTO ANTERIOR) -->
-<section class="hero">
-  <div class="hero__watermark">EM-PÁTICAS</div>
+<div class="marquee" aria-hidden="true"><div class="mq-track"><span>Salud hormonal <svg viewBox="0 0 100 100" class="k-pink"><use href="#s-cherry"/></svg> <em>Bienestar femenino</em> <svg viewBox="0 0 100 100" class="k-hib"><use href="#s-heart"/></svg> <em>Nutrición</em> <svg viewBox="0 0 100 100" class="k-lemon"><use href="#s-lemon"/></svg> Comunidad <svg viewBox="0 0 100 100" class="k-pink"><use href="#s-smile"/></svg> <em>Entenderte</em> <svg viewBox="0 0 100 100" class="k-hib"><use href="#s-spark"/></svg></span><span>Salud hormonal <svg viewBox="0 0 100 100" class="k-pink"><use href="#s-cherry"/></svg> <em>Bienestar femenino</em> <svg viewBox="0 0 100 100" class="k-hib"><use href="#s-heart"/></svg> <em>Nutrición</em> <svg viewBox="0 0 100 100" class="k-lemon"><use href="#s-lemon"/></svg> Comunidad <svg viewBox="0 0 100 100" class="k-pink"><use href="#s-smile"/></svg> <em>Entenderte</em> <svg viewBox="0 0 100 100" class="k-hib"><use href="#s-spark"/></svg></span></div></div>
 
-  <div class="hero__photos">
-    <div class="hero__photo hero__photo--m">
-       <img src="img/maria.jpeg" alt="María"/> 
-      <div class="hero__photo-ph">
-        <span class="hero__photo-ph-letter">M</span>
-        <span class="hero__photo-ph-name">María</span>
+<!-- ═══ EVENTO PRINCIPAL ═══ (aquí irá el nuevo evento) -->
+<section class="tab sec-dark w900" id="evento">
+  <div class="wrap">
+    <div class="ev-grid">
+      <div class="stack" data-stagger>
+        <span class="eyebrow">Próximo evento</span>
+        <h2 class="ev-title">EM-PÁTICAS <em>Wellness Club</em><span class="script">Toque Edition</span></h2>
+        <p class="lead lead-big">Todo lo recaudado será donado a la Fundación IMPAKTEMOS.</p>
+        <span class="don"><svg viewBox="0 0 100 100"><use href="#s-heart"/></svg>Con propósito · Fundación IMPAKTEMOS</span>
+        <div class="evt-pills"><span class="chip">Pilates 6:00 pm</span><span class="chip">Pilates 7:00 pm</span></div>
+        <dl class="facts" style="grid-template-columns:repeat(2,minmax(0,1fr));width:100%;margin-top:18px">
+          <div class="fact"><dt>Lugar</dt><dd>El Toque</dd></div>
+          <div class="fact"><dt>Hora</dt><dd>Desde 5:30 pm</dd></div>
+          <div class="fact"><dt>Vestimenta</dt><dd>Rosados, beige y marrones</dd></div>
+          <div class="fact"><dt>Precio</dt><dd>$18 a BCV</dd></div>
+        </dl>
+        <div class="hero-actions"><a class="pill solid" href="pages/wellness.html">Conoce el evento</a></div>
+      </div>
+      <div class="ev-art" data-r="up">
+        <div class="arch-wrap"><div class="arch"><div class="ph" data-label="FOTO · Evento" data-src="img/toque.jpg" style="--r:3/4"><div class="ph-in"></div></div></div></div>
+        <span class="stk k-pink" style="left:-9%;top:-4%;--sz:clamp(54px,7vw,88px)"><svg class="a-float"  viewBox="0 0 100 100"><use href="#s-smile"/></svg></span>
+        <span class="stk k-lemon" style="right:-5%;top:6%;--sz:clamp(40px,5vw,66px)"><svg class="a-spin" style="--dur:26s" viewBox="0 0 100 100"><use href="#s-lemon"/></svg></span>
       </div>
     </div>
-    <div class="hero__photo hero__photo--e">
-       <img src="img/emely.jpeg" alt="Emely"/> 
-      <div class="hero__photo-ph">
-        <span class="hero__photo-ph-letter">E</span>
-        <span class="hero__photo-ph-name">Emely</span>
-      </div>
-    </div>
-    <div class="hero__photo-divider"></div>
-  </div>
-  <div class="hero__wave"></div>
-
-  <div class="hero__body">
-    <span class="eyebrow hero__edition"></span>
-    <h1 class="hero__brand">EM-PÁTICAS</h1>
-    <p class="hero__slogan">el arte de sentirte comprendida</p>
-    <div class="hero__divider"></div>
-    <!--<h2 class="hero__title">El Poder de<br/><em>Entenderte</em></h2>
-    <p class="hero__sub">Masterclass en Salud Hormonal</p>
-    <div class="hero__chips">
-      <div class="hero__chip"><span class="hero__chip-dot"></span>25 Abril 2026</div>
-      <div class="hero__chip"><span class="hero__chip-dot"></span>La Wawa · Lechería</div>
-      <div class="hero__chip"><span class="hero__chip-dot"></span>Masterclass · Brunch educativo</div>
-      <div class="hero__chip"><span class="hero__chip-dot"></span>Cupos limitados</div>
-    </div>
-    <a href="pages/evento.html" class="btn btn-fill">Reserva tu lugar</a>
-  </div>
-</section>-->
-
-<!-- WELLNESS EVENT PREVIEW (EVENTO PRINCIPAL) -->
-<section class="evt-prev">
-  <span class="eyebrow rv">Próximo Evento</span>
-  <h2 class="evt-prev__title rv d1">EM-PÁTICAS<br/><em>Wellness Club</em></h2>
-  <p class="evt-prev__desc rv d2">Toque Edition. Todo lo recaudado será donado a la Fundación IMPAKTEMOS.</p>
-
-  <div class="pills rv d1">
-    <span class="pill">Pilates 6:00 pm</span>
-    <span class="pill">Pilates 7:00 pm</span>
-  </div>
-
-  <div class="evt-info rv d2">
-    <div class="evt-info__row">
-      <div class="evt-info__cell"><span class="evt-info__lbl">Lugar</span><span class="evt-info__val">El Toque</span></div>
-      <div class="evt-info__cell"><span class="evt-info__lbl">Hora</span><span class="evt-info__val">Desde 5:30 pm</span></div>
-    </div>
-    <div class="evt-info__row">
-      <div class="evt-info__cell"><span class="evt-info__lbl">Vestimenta</span><span class="evt-info__val">Rosados, beige y marrones</span></div>
-      <div class="evt-info__cell"><span class="evt-info__lbl">Precio</span><span class="evt-info__val">$18 a BCV</span></div>
-    </div>
-  </div>
-
-  <div class="kit-grid rv d1">
-    <div class="kit-card"><span class="kit-card__icon">🧘</span><h4>Mat</h4><p>Incluido en tu entrada</p></div>
-    <div class="kit-card"><span class="kit-card__icon">🥗</span><h4>Snacks Saludables</h4><p>Para disfrutar en el evento</p></div>
-    <div class="kit-card"><span class="kit-card__icon">💧</span><h4>Hidratación</h4><p>Bebidas fun</p></div>
-    <div class="kit-card"><span class="kit-card__icon">🎁</span><h4>Detalles</h4><p>Especiales para ustedes</p></div>
-    <div class="kit-card"><span class="kit-card__icon">✨</span><h4>Sorpresa</h4><p>Actividad con brillis</p></div>
-  </div>
-
-  <div class="evt-btns rv d3">
-    <a href="pages/wellness.html" class="btn btn-peony">Conoce el evento</a>
+    <ul class="cards kit-cards" data-stagger style="margin-top:56px">
+      <li class="card"><svg class="gl" viewBox="0 0 100 100" style="--a:var(--cotton)"><use href="#s-spark"/></svg><h3>Mat de Pilates</h3><p>Incluido en tu entrada</p></li>
+      <li class="card"><svg class="gl" viewBox="0 0 100 100" style="--a:var(--cotton)"><use href="#s-spark"/></svg><h3>Snacks saludables</h3><p>Para disfrutar en el evento</p></li>
+      <li class="card"><svg class="gl" viewBox="0 0 100 100" style="--a:var(--cotton)"><use href="#s-spark"/></svg><h3>Hidratación</h3><p>Bebidas fun</p></li>
+      <li class="card"><svg class="gl" viewBox="0 0 100 100" style="--a:var(--cotton)"><use href="#s-spark"/></svg><h3>Detalles</h3><p>Especiales para ustedes</p></li>
+      <li class="card"><svg class="gl" viewBox="0 0 100 100" style="--a:var(--cotton)"><use href="#s-spark"/></svg><h3>Sorpresa</h3><p>Actividad con brillis</p></li>
+    </ul>
   </div>
 </section>
 
-<!-- COUNTDOWN -->
-<!--<div class="countdown rv">
-  <span class="countdown__label">Faltan para el evento</span>
-  <div class="countdown__row">
-    <div class="cd-unit"><span class="cd-num" id="days">00</span><span class="cd-lbl">días</span></div>
-    <span class="cd-sep">·</span>
-    <div class="cd-unit"><span class="cd-num" id="hours">00</span><span class="cd-lbl">horas</span></div>
-    <span class="cd-sep">·</span>
-    <div class="cd-unit"><span class="cd-num" id="minutes">00</span><span class="cd-lbl">min</span></div>
-    <span class="cd-sep">·</span>
-    <div class="cd-unit"><span class="cd-num" id="seconds">00</span><span class="cd-lbl">seg</span></div>
-  </div>
-</div>-->
-
-
-
-<!-- NOSOTRAS PREVIEW -->
-<section class="nos-prev">
-  <div class="nos-prev__header rv">
-    <span class="eyebrow">Quiénes somos</span>
-    <h2 class="nos-prev__title">Dos mujeres.<br/><em>Una misión.</em></h2>
-  </div>
-  <p class="nos-prev__quote rv d1">"Creamos este espacio porque nosotras también estuvimos perdidas. Porque nadie nos explicó cómo funciona nuestro cuerpo."</p>
-  <div class="nos-duo rv d2">
-    <div class="nos-card nos-card--m">
-       <img src="img/maria2.jpeg" alt="María"/> 
-      <span class="nos-card__ghost">M</span>
-      <div class="nos-card__overlay"></div>
-      <div class="nos-card__info">
-        <span class="nos-card__name">María</span>
-        <span class="nos-card__role">Nutrición Clínica</span>
+<!-- ═══ NOSOTRAS ═══ -->
+<section class="tab sec-paper" id="nosotras">
+  <div class="wrap">
+    <div class="nos-grid">
+      <div class="stack" data-stagger>
+        <span class="eyebrow">Quiénes somos</span>
+        <h2 class="h2" style="font-size:clamp(2.8rem,7vw,5.6rem);line-height:.92">Dos mujeres.<br><em>Una misión.</em></h2>
+        <p class="quote">“Creamos este espacio porque nosotras también estuvimos perdidas. Porque nadie nos explicó cómo funciona nuestro cuerpo.”</p>
+        <div class="hero-actions"><a class="pill solid" href="pages/nosotras.html">Conoce nuestra historia →</a></div>
       </div>
-    </div>
-    <div class="nos-card nos-card--e">
-       <img src="img/emely.jpeg" alt="Emely"/> 
-      <span class="nos-card__ghost">E</span>
-      <div class="nos-card__overlay"></div>
-      <div class="nos-card__info">
-        <span class="nos-card__name">Emely</span>
-        <span class="nos-card__role">Entrenadora</span>
+      <div class="duo" data-r="up">
+        <div><div class="ph" data-label="FOTO · María" data-src="img/maria2.jpeg"><div class="ph-in"></div></div><span class="nm">María<small>Nutrición Clínica</small></span></div>
+        <div><div class="ph" data-label="FOTO · Emily" data-src="img/emely.jpeg"><div class="ph-in"></div></div><span class="nm">Emily<small>Entrenadora</small></span></div>
+        <span class="stk k-hib" style="left:-6%;top:-6%;--sz:clamp(46px,6vw,78px)"><svg class="a-float"  viewBox="0 0 100 100"><use href="#s-daisy"/></svg></span>
+        <span class="stk k-cherry" style="right:-5%;bottom:6%;--sz:clamp(46px,6vw,78px)"><svg class="a-wob"  viewBox="0 0 100 100"><use href="#s-heart"/></svg></span>
       </div>
     </div>
   </div>
-  <a href="pages/nosotras.html" class="btn btn-out rv d3">Conoce nuestra historia →</a>
 </section>
 
-<!-- EVENTO PREVIEW -->
-<section class="evt-prev">
-  <span class="eyebrow rv">El Evento</span>
-  <h2 class="evt-prev__title rv d1">Sintonía<br/><em>Femenina</em></h2>
-  <p class="evt-prev__desc rv d2">Una inmersión profunda en los temas que nadie nos enseñó — desde la ciencia y la experiencia real.</p>
-  <div class="pills rv d1">
-    <span class="pill">Desajustes Hormonales</span>
-    <span class="pill">Amenorrea</span>
-    <span class="pill">Salud Mental</span>
-    <span class="pill">Biohacking Femenino</span>
-    <span class="pill">Alimentación Consciente</span>
-  </div>
-  <div class="evt-info rv d2">
-    <div class="evt-info__row">
-      <div class="evt-info__cell"><span class="evt-info__lbl">Fecha</span><span class="evt-info__val">25 Abril 2026</span></div>
-      <div class="evt-info__cell"><span class="evt-info__lbl">Lugar</span><span class="evt-info__val">La Wawa · Lechería</span></div>
+<!-- ═══ EVENTOS PASADOS ═══ -->
+<section class="tab sec-light" id="pasados">
+  <div class="wrap">
+    <div class="stack" data-stagger style="margin-bottom:36px">
+      <span class="eyebrow">Eventos que ha habido</span>
+      <h2 class="h2" style="font-size:clamp(2.6rem,6vw,5rem);line-height:.95">Lo que ya <em>vivimos</em></h2>
     </div>
-    <div class="evt-info__row">
-      <div class="evt-info__cell"><span class="evt-info__lbl">Formato</span><span class="evt-info__val">Brunch educativo</span></div>
-      <div class="evt-info__cell"><span class="evt-info__lbl">Cupos</span><span class="evt-info__val">Limitados</span></div>
+    <article class="past-card tilt" data-r="up">
+      <header><h3>Sintonía Femenina</h3><span>25 Abril 2026 · La Wawa · Lechería</span></header>
+      <div class="l">
+        <h4>El evento</h4>
+        <p style="color:var(--muted);margin-bottom:18px">Una inmersión profunda en los temas que nadie nos enseñó, desde la ciencia y la experiencia real.</p>
+        <dl class="facts2"><div><dt>Formato</dt><dd>Brunch educativo</dd></div><div><dt>Cupos</dt><dd>Limitados</dd></div></dl>
+      </div>
+      <div class="r">
+        <h4>Temas</h4>
+        <div class="chips"><span>Desajustes hormonales</span><span>Amenorrea</span><span>Salud mental</span><span>Biohacking femenino</span><span>Alimentación consciente</span></div>
+        <div class="hero-actions" style="margin-top:22px"><a class="pill ghost" href="pages/evento.html">Ver programa →</a></div>
+      </div>
+    </article>
+    <span class="stk k-lemon" style="right:3%;top:-2%;--sz:clamp(50px,6vw,84px)"><svg class="a-float"  viewBox="0 0 100 100"><use href="#s-smile"/></svg></span>
+  </div>
+</section>
+
+<!-- ═══ KIT ═══ -->
+<section class="tab sec-blush" id="kit">
+  <div class="wrap">
+    <div class="stack" data-stagger>
+      <span class="eyebrow">Lo que recibes</span>
+      <h2 class="h2" style="font-size:clamp(2.6rem,6vw,5rem);line-height:.95">Tu kit de <em>bienvenida</em></h2>
+      <p class="lead">Cada detalle fue pensado para que tu experiencia sea exclusiva e inolvidable.</p>
+    </div>
+    <ul class="cards kit-cards" data-stagger>
+      <li class="card"><svg class="gl" viewBox="0 0 100 100"><use href="#s-spark"/></svg><h3>Productos HALO</h3><p>Obleas @halosnack</p></li>
+      <li class="card"><svg class="gl" viewBox="0 0 100 100"><use href="#s-spark"/></svg><h3>Mini shots</h3><p>Kombucha @kombuchasantocha</p></li>
+      <li class="card"><svg class="gl" viewBox="0 0 100 100"><use href="#s-spark"/></svg><h3>Velas aromáticas</h3><p>@indeleblearoma · @velaromalecheria</p></li>
+      <li class="card"><svg class="gl" viewBox="0 0 100 100"><use href="#s-spark"/></svg><h3>Snacks fit</h3><p>@acailovers.ve · @conmariabonita</p></li>
+      <li class="card"><svg class="gl" viewBox="0 0 100 100"><use href="#s-spark"/></svg><h3>Gorra exclusiva</h3><p>Edición limitada</p></li>
+      <li class="card"><svg class="gl" viewBox="0 0 100 100"><use href="#s-spark"/></svg><h3>Accesorios</h3><p>Bolígrafo, espejo, stickers</p></li>
+      <li class="card"><svg class="gl" viewBox="0 0 100 100"><use href="#s-spark"/></svg><h3>Cupones</h3><p>Fit Treats · Ribadeo · Dermelite · Sculpt</p></li>
+      <li class="card"><svg class="gl" viewBox="0 0 100 100"><use href="#s-spark"/></svg><h3>Pulseras</h3><p>Actividad sorpresa final</p></li>
+      <li class="card"><svg class="gl" viewBox="0 0 100 100"><use href="#s-spark"/></svg><h3>Certificado PDF</h3><p>Certificado digital de Masterclass</p></li>
+    </ul>
+    <div class="snackbar" data-r="up"><b>Snack bar del evento</b><span>Açai · @acailovers.ve · Postres fit · @conmariabonita · Snacks nutritivos</span></div>
+    <div class="hero-actions" style="margin-top:34px;position:relative;z-index:2"><a class="pill solid" href="pages/evento.html">Reserva tu lugar</a></div>
+    <span class="stk k-pink" style="right:-2%;top:3%;--sz:clamp(54px,7vw,92px)"><svg class="a-float"  viewBox="0 0 100 100"><use href="#s-cherry"/></svg></span>
+  </div>
+</section>
+
+<!-- ═══ ALIADAS ═══ -->
+<section class="tab sec-paper" id="aliadas" style="padding-bottom:calc(var(--pad) + 30px)">
+  <div class="wrap">
+    <div class="stack" data-stagger>
+      <span class="eyebrow">Patrocinantes</span>
+      <h2 class="h2" style="font-size:clamp(2.6rem,6vw,5rem);line-height:.95">Marcas que lo <em>hacen posible</em></h2>
+    </div>
+    <div class="spons" data-stagger>
+      <div><img src="img/patriciachacon.png" alt="Patricia Chacón" loading="lazy"></div><div><img src="img/cremigurt.png" alt="Cremigurt" loading="lazy"></div><div><img src="img/amatista.png" alt="Amatista" loading="lazy"></div><div><img src="img/dermolite.png" alt="Dermolite" loading="lazy"></div><div><img src="img/intylact.png" alt="Intylact" loading="lazy"></div><div><img src="img/acailovers.png" alt="Acai Lovers" loading="lazy"></div><div><img src="img/galentines.png" alt="Galentines" loading="lazy"></div><div><img src="img/marea.png" alt="Marea" loading="lazy"></div><div><img src="img/halo.png" alt="HALO" loading="lazy"></div><div><img src="img/syf.png" alt="SYF" loading="lazy"></div><div><img src="img/healthy.png" alt="Healthy" loading="lazy"></div><div><img src="img/conmariabonita.png" alt="Con María Bonita" loading="lazy"></div><div><img src="img/decogym.png" alt="Decogym" loading="lazy"></div><div><img src="img/lawawa.png" alt="La Wawa" loading="lazy"></div><div><img src="img/velaroma.png" alt="Velaroma" loading="lazy"></div><div><img src="img/santocha.png" alt="Santocha" loading="lazy"></div>
     </div>
   </div>
-  <div class="evt-btns rv d3">
-    <a href="pages/evento.html" class="btn btn-peony">Quiero mi entrada</a>
-    <a href="pages/evento.html" class="btn btn-out">Ver programa →</a>
-  </div>
 </section>
-
-<!-- KIT PREVIEW -->
-<section class="kit-prev">
-  <span class="eyebrow rv">Lo que recibes</span>
-  <h2 class="kit-prev__title rv d1">Tu Kit de<br/><em>Bienvenida</em></h2>
-  <p class="kit-prev__sub rv d2">Cada detalle fue pensado para que tu experiencia sea exclusiva e inolvidable.</p>
-  <div class="kit-grid rv d1">
-    <div class="kit-card"><span class="kit-card__icon">🌸</span><h4>Productos HALO</h4><p>Obleas @halosnack</p></div>
-    <div class="kit-card"><span class="kit-card__icon">🫚</span><h4>Mini Shots</h4><p>Kombucha @kombuchasantocha</p></div>
-    <div class="kit-card"><span class="kit-card__icon">🕯️</span><h4>Velas Aromáticas</h4><p>@indeleblearoma · @velaromalecheria</p></div>
-    <div class="kit-card"><span class="kit-card__icon">🥗</span><h4>Snacks Fit</h4><p>@acailovers.ve · @conmariabonita</p></div>
-    <div class="kit-card"><span class="kit-card__icon">🧢</span><h4>Gorra Exclusiva</h4><p>Edición limitada</p></div>
-    <div class="kit-card"><span class="kit-card__icon">✨</span><h4>Accesorios</h4><p>Bolígrafo, espejo, stickers</p></div>
-    <div class="kit-card"><span class="kit-card__icon">🎟️</span><h4>Cupones</h4><p>Fit Treats · Ribadeo · Dermelite · Sculpt</p></div>
-    <div class="kit-card"><span class="kit-card__icon">💫</span><h4>Pulseras</h4><p>Actividad sorpresa final</p></div>
-    <div class="kit-card"><span class="kit-card__icon">📄</span><h4>Certificado PDF</h4><p>Certificado digital de Masterclass</p></div>
+</main>
+<footer class="foot">
+  <div class="foot-dots pat-dots drift" aria-hidden="true"></div>
+  <div class="foot-txt">
+    <svg viewBox="0 0 100 100"><use href="#s-spark"/></svg><span>Empatía</span>
+    <svg viewBox="0 0 100 100"><use href="#s-spark"/></svg><span>Ciencia</span>
+    <svg viewBox="0 0 100 100"><use href="#s-spark"/></svg><span>Comunidad</span>
+    <svg viewBox="0 0 100 100"><use href="#s-spark"/></svg>
   </div>
-  <div class="snack-strip rv d2">
-    <span class="snack-strip__tag">Snack Bar del Evento</span>
-    <p class="snack-strip__items">Açai · @acailovers.ve &nbsp;·&nbsp; Postres Fit · @conmariabonita &nbsp;·&nbsp; Snacks Nutritivos</p>
+  <div style="display:flex;gap:18px;justify-content:center;flex-wrap:wrap;padding:0 var(--gutter) 18px;font:500 11px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase">
+    <a href="https://instagram.com/conmariabonita" target="_blank" rel="noopener" style="color:var(--cotton)">@conmariabonita</a>
+    <a href="https://instagram.com/fitwithemi_" target="_blank" rel="noopener" style="color:var(--cotton)">@fitwithemi_</a>
   </div>
-  <a href="pages/evento.html" class="btn btn-fill rv d3">Reserva tu lugar</a>
-</section>
-
-<!-- SPONSORS -->
-<div class="sponsors rv">
-  <span class="sponsors__tag">Patrocinantes</span>
-<div class="sponsors__list">
-  <img src="img/patriciachacon.png" alt="Patricia Chacón">
-  <img src="img/cremigurt.png" alt="Cremigurt">
-  <img src="img/amatista.png" alt="Amatista">
-  <img src="img/dermolite.png" alt="Dermolite">
-  <img src="img/intylact.png" alt="Intylact">
-  <img src="img/acailovers.png" alt="Acai Lovers">
-  <img src="img/galentines.png" alt="Galentines">
-  <img src="img/marea.png" alt="Marea">
-  <img src="img/halo.png" alt="HALO">
-  <img src="img/syf.png" alt="SYF">
-  <img src="img/healthy.png" alt="Healthy">
-  <img src="img/conmariabonita.png" alt="Con María Bonita">
-  <img src="img/decogym.png" alt="Decogym">
-  <img src="img/lawawa.png" alt="La Wawa">
-  <img src="img/velaroma.png" alt="Velaroma">
-  <img src="img/santocha.png" alt="Santocha">
-</div>
-</div>
-
-<!-- FOOTER -->
-<footer>
-  <span class="footer__brand">EM-PÁTICAS</span>
-  <p class="footer__slogan">el arte de sentirte comprendida</p>
-  <div class="footer__igs">
-    <a href="https://instagram.com/conmariabonita" target="_blank">@conmariabonita</a>
-    <span>·</span>
-    <a href="https://instagram.com/fitwithemi_" target="_blank">@fitwithemi_</a>
-  </div>
-  <p class="footer__copy">© 2026 EM-PÁTICAS · By Gabriella Wakil</p>
-  <div class="footer__signature">
-  <img src="img/gw.png" alt="GW Studios">
-  <span>@gw.studios_</span>
-</div>
+  <a class="gw-lock" href="https://instagram.com/gw.studios_" target="_blank" rel="noopener"><img src="img/gw-logo.png" alt="GW Studios"><span>Creado por<em>Gabriella Wakil</em>@gw.studios_</span></a>
+  <p style="text-align:center;font-size:10px;letter-spacing:.2em;text-transform:uppercase;opacity:.7;padding-bottom:26px">© 2026 EM-PÁTICAS</p>
 </footer>
+<script src="js/retro.js"></script>
 
-<script src="js/countdown.js"></script>
-<script src="js/reveal.js"></script>
 </body>
 </html>
