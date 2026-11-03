@@ -3,31 +3,82 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
-  <meta name="theme-color" content="#7c0116"/>
+  <meta name="theme-color" content="#F5EFE6"/>
   <title>Nosotras · EM-PÁTICAS</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="../css/main.css"/>
   <link rel="stylesheet" href="../css/nosotras.css"/>
   <style>
-    .profile__read-more{display:none}
-    .profile__read-more.expanded{display:block}
-    .profile__toggle,.why-toggle{
-      display:inline-flex;align-items:center;gap:6px;margin:4px 0 20px;
-      font:500 11px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;
-      color:var(--peony);cursor:pointer;border:0;border-bottom:1.5px solid currentColor;background:none;padding:4px 0;
+    .profile__read-more { display: none; }
+    .profile__read-more.expanded { display: block; }
+
+    .profile__toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 8px;
+      margin-bottom: 20px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: var(--peony);
+      cursor: pointer;
+      border: none;
+      background: none;
+      padding: 0;
+      font-family: var(--sans);
     }
-    .why-section{
-      background:var(--deep);color:var(--cream);position:relative;
-      border-radius:var(--rad) var(--rad) 0 0;margin-top:calc(var(--rad)*-1);border-top:0;
-      padding:calc(52px + var(--rad)*.4) 24px 56px;
+
+    .why-section {
+      background: var(--espresso);
+      padding: 48px 24px;
+      border-top: 4px solid var(--cream);
     }
-    .why-section .eyebrow{color:var(--beige);opacity:1;margin-bottom:14px}
-    .why-section h2{font-family:var(--serif);font-weight:400;font-size:48px;line-height:.95;letter-spacing:-.02em;color:var(--cream);margin-bottom:24px}
-    .why-section h2 em{font-style:italic;color:var(--cream2)}
-    .why-section p{font-size:13px;line-height:1.9;color:var(--cream);opacity:.88;margin-bottom:16px}
-    .why-hidden{display:none}.why-hidden.expanded{display:block}
-    .why-toggle{color:var(--cream2)}
+    .why-section .eyebrow {
+      color: var(--peony-l);
+      opacity: .75;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .why-section h2 {
+      font-family: var(--serif);
+      font-size: 34px;
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+    .why-section h2 em {
+      font-style: italic;
+      color: var(--peony-l);
+    }
+    .why-section p {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--white);
+      opacity: .78;
+      line-height: 1.9;
+      margin-bottom: 16px;
+    }
+    .why-hidden { display: none; }
+    .why-hidden.expanded { display: block; }
+    .why-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 8px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: var(--peony-l);
+      cursor: pointer;
+      border: none;
+      background: none;
+      padding: 0;
+      font-family: var(--sans);
+    }
   </style>
 </head>
 <body>
@@ -77,17 +128,17 @@
 <!-- ══ EMELY ══ -->
 <article class="profile rv d1">
   <div class="profile__photo profile__photo--e">
-    <img src="../img/emely.jpeg" alt="Emily"/>
+    <img src="../img/emely.jpeg" alt="Emely"/>
     <span class="profile__ph-ghost">E</span>
     <div class="profile__photo-overlay"></div>
     <div class="profile__photo-info">
-      <span class="profile__ph-name">Emily</span>
+      <span class="profile__ph-name">Emely</span>
       <span class="profile__ph-role">Entrenadora Certificada</span>
     </div>
   </div>
   <div class="profile__body">
     <span class="profile__tag">Entrenamiento · Deporte · Rendimiento</span>
-    <h2 class="profile__name">Emily Nasr</h2>
+    <h2 class="profile__name">Emely Nasr</h2>
     <p class="profile__title">Entrenadora Certificada · Lcda. Comunicación Social · 25 años</p>
 
     <p class="profile__bio">Me dedico a mi marca de Açaí Bowl y productos sin azúcar, promoviendo el movimiento y la buena alimentación a través de mi marca personal y laboral.</p>
@@ -124,7 +175,7 @@
 <div class="closing rv">
   <span class="closing__line"></span>
   <p class="closing__text">"Creamos EM-PÁTICAS porque nosotras también estuvimos perdidas. Porque cometimos errores. Porque nadie nos explicó cómo funciona nuestro cuerpo.<em> Hoy somos ese espacio que necesitábamos."</em></p>
-  <span class="closing__sig">— María &amp; Emily</span>
+  <span class="closing__sig">— María &amp; Emely</span>
 </div>
 
 <div class="cta-wrap">

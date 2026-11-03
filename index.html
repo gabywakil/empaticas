@@ -3,252 +3,46 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
-  <meta name="theme-color" content="#7c0116"/>
+  <meta name="theme-color" content="#F5EFE6"/>
   <title>EM-PÁTICAS — el arte de sentirte comprendida</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/main.css"/>
 </head>
 <body>
 
-<!-- HEADER -->
-<header class="site-header">
-  <img src="img/logo.png" alt="EM-PÁTICAS" class="site-header__logo-img"/>
-  <a href="pages/wellness.html" class="site-header__cta">Inscríbete</a>
-</header>
+<main class="lt">
+  <img src="img/logo.png" alt="EM-PÁTICAS" class="lt__logo rv"/>
+  <p class="lt__slogan rv d1">el arte de sentirte comprendida</p>
+  <div class="lt__divider rv d1"></div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero__watermark">EM-PÁTICAS</div>
+  <nav class="lt__list">
+    <a href="pages/nosotras.html" class="lt__btn rv d1">
+      <span><span class="lt__lbl">Quiénes somos</span><span class="lt__title">Conócenos</span><span class="lt__sub">María &amp; Emily · nuestra historia</span></span>
+      <span class="lt__arrow">→</span>
+    </a>
 
-  <div class="hero__photos">
-    <div class="hero__photo hero__photo--m">
-      <img src="img/maria.jpeg" alt="María"/>
-      <div class="hero__photo-ph">
-        <span class="hero__photo-ph-letter">M</span>
-        <span class="hero__photo-ph-name">María</span>
-      </div>
-    </div>
-    <div class="hero__photo hero__photo--e">
-      <img src="img/emely.jpeg" alt="Emily"/>
-      <div class="hero__photo-ph">
-        <span class="hero__photo-ph-letter">E</span>
-        <span class="hero__photo-ph-name">Emily</span>
-      </div>
-    </div>
-    <div class="hero__photo-divider"></div>
-  </div>
-  <div class="hero__wave"></div>
+    <a href="pages/wellness.html" class="lt__btn lt__btn--main rv d2">
+      <span><span class="lt__lbl"><span class="lt__dot"></span>Próximo evento · Inscríbete</span><span class="lt__title">Marea Sunset <em>Wellness Club</em></span><span class="lt__sub">Marea Club de Playa · $40 USD · aforo exclusivo</span></span>
+      <span class="lt__arrow">→</span>
+    </a>
 
-  <div class="hero__body">
-    <span class="eyebrow hero__edition">Wellness Club · Lechería</span>
-    <h1 class="hero__brand">EM-PÁTICAS</h1>
-    <p class="hero__slogan">el arte de sentirte comprendida</p>
-    <div class="hero__divider"></div>
-  </div>
-</section>
+    <p class="lt__past rv d2">Eventos anteriores</p>
 
-<!-- EVENTO PRINCIPAL -->
-<section class="evt-prev evt-prev--dark">
-  <span class="eyebrow rv">Próximo Evento</span>
-  <h2 class="evt-prev__title rv d1">Marea Sunset<br/><em>Wellness Club</em></h2>
-  <p class="evt-prev__desc rv d2">by EM-PÁTICAS. ¡Aforo exclusivo! Diseñado para un grupo selecto de mujeres, con una experiencia personalizada, cómoda y premium donde tú eres la verdadera protagonista.</p>
+    <a href="pages/evento.html" class="lt__btn rv d3">
+      <span><span class="lt__lbl">Evento 1</span><span class="lt__title">Sintonía <em>Femenina</em></span><span class="lt__sub">25 Abril 2026 · La Wawa</span></span>
+      <span class="lt__arrow">→</span>
+    </a>
 
-  <div class="pills rv d1">
-    <span class="pill">Turno 1 · 4:00 – 5:00 pm</span>
-    <span class="pill">Turno 2 · 5:00 – 6:00 pm</span>
-  </div>
+    <a href="pages/toque.html" class="lt__btn rv d3">
+      <span><span class="lt__lbl">Evento 2</span><span class="lt__title">Wellness Club <em>Toque Edition</em></span><span class="lt__sub">El Toque · a beneficio de IMPAKTEMOS</span></span>
+      <span class="lt__arrow">→</span>
+    </a>
+  </nav>
 
-  <div class="evt-info rv d2">
-    <div class="evt-info__row">
-      <div class="evt-info__cell"><span class="evt-info__lbl">Lugar</span><span class="evt-info__val">Marea Club de Playa</span></div>
-      <div class="evt-info__cell"><span class="evt-info__lbl">Desde</span><span class="evt-info__val">4:00 pm</span></div>
-    </div>
-    <div class="evt-info__row">
-      <div class="evt-info__cell"><span class="evt-info__lbl">Clase</span><span class="evt-info__val">Pilates indoor</span></div>
-      <div class="evt-info__cell"><span class="evt-info__lbl">Entrada</span><span class="evt-info__val">$40 USD</span></div>
-    </div>
-  </div>
-
-  <div class="merch rv d2">
-    <b>Merch exclusiva alert</b>
-    <p>¡Regalo especial para las primeras 40 entradas! Las primeras 40 chicas en asegurar su cupo recibirán merch oficial de EM-PÁTICAS (piezas exclusivas de nuestra línea de ropa). ¡Corre a inscribirte antes de que se agoten!</p>
-  </div>
-
-  <div class="evt-btns rv d3">
-    <a href="pages/wellness.html" class="btn btn-peony">Asegura tu cupo</a>
-  </div>
-</section>
-
-<!-- LA EXPERIENCIA -->
-<section class="kit-prev">
-  <span class="eyebrow rv">La experiencia · Indoor &amp; Outdoor</span>
-  <h2 class="kit-prev__title rv d1">Primero la clase,<br/><em>luego el mar</em></h2>
-  <p class="kit-prev__sub rv d2">Pilates indoor con aire acondicionado en el área de restaurante de Marea Club (no vas a sudar tu makeup). Al salir de tu clase, o mientras esperas tu turno, la experiencia continúa frente al mar.</p>
-  <div class="kit-grid rv d1">
-    <div class="kit-card"><span class="kit-card__icon">✦</span><h4>Cold plunge</h4><p>Jacuzzis de agua fría y área de masajes</p></div>
-    <div class="kit-card"><span class="kit-card__icon">✦</span><h4>Beauty &amp; glam</h4><p>Cabello, peinados y decoración de uñas</p></div>
-    <div class="kit-card"><span class="kit-card__icon">✦</span><h4>Tasting &amp; food</h4><p>Degustación de yogur, galletas saludables y comida saludable incluida</p></div>
-    <div class="kit-card"><span class="kit-card__icon">✦</span><h4>Activaciones</h4><p>Dinámicas y sorpresas con nuestros aliados</p></div>
-  </div>
-</section>
-
-<!-- NOSOTRAS PREVIEW -->
-<section class="nos-prev">
-  <div class="nos-prev__header rv">
-    <span class="eyebrow">Quiénes somos</span>
-    <h2 class="nos-prev__title">Dos mujeres.<br/><em>Una misión.</em></h2>
-  </div>
-  <p class="nos-prev__quote rv d1">"Creamos este espacio porque nosotras también estuvimos perdidas. Porque nadie nos explicó cómo funciona nuestro cuerpo."</p>
-  <div class="nos-duo rv d2">
-    <div class="nos-card nos-card--m">
-      <img src="img/maria2.jpeg" alt="María"/>
-      <span class="nos-card__ghost">M</span>
-      <div class="nos-card__overlay"></div>
-      <div class="nos-card__info">
-        <span class="nos-card__name">María</span>
-        <span class="nos-card__role">Nutrición Clínica</span>
-      </div>
-    </div>
-    <div class="nos-card nos-card--e">
-      <img src="img/emely.jpeg" alt="Emily"/>
-      <span class="nos-card__ghost">E</span>
-      <div class="nos-card__overlay"></div>
-      <div class="nos-card__info">
-        <span class="nos-card__name">Emily</span>
-        <span class="nos-card__role">Entrenadora</span>
-      </div>
-    </div>
-  </div>
-  <a href="pages/nosotras.html" class="btn btn-fill rv d3">Conoce nuestra historia →</a>
-</section>
-
-<!-- QUÉ INCLUYE -->
-<section class="kit-prev kit-prev--incl" style="background:var(--cream)">
-  <span class="eyebrow rv">Tu ticket</span>
-  <h2 class="kit-prev__title rv d1">¿Qué<br/><em>incluye</em>?</h2>
-  <p class="kit-prev__sub rv d2">Tu entrada al Marea Sunset Wellness Club te da acceso total a:</p>
-  <div class="kit-grid rv d1">
-    <div class="kit-card"><span class="kit-card__icon">✦</span><h4>Pilates indoor</h4><p>En el horario que escojas</p></div>
-    <div class="kit-card"><span class="kit-card__icon">✦</span><h4>Tu mat</h4><p>Ya lo tienes garantizado, no necesitas traer el tuyo</p></div>
-    <div class="kit-card"><span class="kit-card__icon">✦</span><h4>Kit de regalos</h4><p>Exclusivos de todos nuestros patrocinantes</p></div>
-    <div class="kit-card"><span class="kit-card__icon">✦</span><h4>Hidratación</h4><p>Continua durante todo el evento</p></div>
-    <div class="kit-card"><span class="kit-card__icon">✦</span><h4>Cóctel</h4><p>De bienvenida</p></div>
-    <div class="kit-card"><span class="kit-card__icon">✦</span><h4>Comida saludable</h4><p>Incluida en tu entrada</p></div>
-    <div class="kit-card"><span class="kit-card__icon">✦</span><h4>Degustación</h4><p>Postres y productos saludables en los stands</p></div>
-    <div class="kit-card"><span class="kit-card__icon">✦</span><h4>Rifas</h4><p>Especiales de marcas aliadas</p></div>
-    <div class="kit-card"><span class="kit-card__icon">✦</span><h4>Obsequios</h4><p>Detalles de marcas patrocinantes</p></div>
-    <div class="kit-card"><span class="kit-card__icon">✦</span><h4>Fotógrafo</h4><p>Fotos profesionales durante todo el evento</p></div>
-    <div class="kit-card kit-card--wide"><span class="kit-card__icon">✦</span><h4>Área outdoor</h4><p>Acceso total y sin costo a jacuzzis de agua fría, masajes y activaciones de marca</p></div>
-    <div class="kit-card kit-card--wide"><span class="kit-card__icon">✦</span><h4>Challenge del Reel Recap</h4><p>Participación incluida</p></div>
-  </div>
-  <a href="pages/wellness.html" class="btn btn-fill rv d3">Reserva tu lugar · $40</a>
-</section>
-
-<!-- CHALLENGE -->
-<section class="evt-prev evt-prev--past">
-  <span class="eyebrow rv">Challenge del Reel Recap</span>
-  <h2 class="evt-prev__title rv d1">Más de<br/><em>$500 USD</em> en premios</h2>
-  <p class="evt-prev__desc rv d2">Al asistir podrás crear y subir tu reel mostrando tu experiencia recap en Marea Sunset Wellness Club. Las chicas que graben y editen los mejores reels competirán por este paquete de premios.</p>
-  <div class="kit-grid rv d1">
-    <div class="kit-card"><span class="kit-card__icon">✦</span><h4>Cena $150</h4><p>En Marea Club de Playa</p></div>
-    <div class="kit-card"><span class="kit-card__icon">✦</span><h4>Pilates</h4><p>Mensualidades gratis en los mejores estudios de Lechería</p></div>
-    <div class="kit-card"><span class="kit-card__icon">✦</span><h4>Gimnasios</h4><p>Mensualidades gratis en gimnasios de Lechería</p></div>
-    <div class="kit-card"><span class="kit-card__icon">✦</span><h4>Nutrición</h4><p>Consulta gratis con María Mardeni</p></div>
-    <div class="kit-card"><span class="kit-card__icon">✦</span><h4>Açaí Lovers</h4><p>Productos exclusivos</p></div>
-    <div class="kit-card"><span class="kit-card__icon">✦</span><h4>Suplementos</h4><p>De nuestras marcas patrocinantes</p></div>
-    <div class="kit-card kit-card--wide"><span class="kit-card__icon">✦</span><h4>Y más</h4><p>Detalles y premios de nuestras marcas patrocinantes</p></div>
-  </div>
-</section>
-
-<!-- EVENTOS QUE HA HABIDO -->
-<section class="evt-prev">
-  <span class="eyebrow rv">Eventos que ha habido</span>
-  <h2 class="evt-prev__title rv d1">Wellness Club<br/><em>Toque Edition</em></h2>
-  <p class="evt-prev__desc rv d2">Septiembre 2026 · El Toque, Lechería. Todo lo recaudado fue donado a la Fundación IMPAKTEMOS.</p>
-  <div class="pills rv d1">
-    <span class="pill">Pilates 6:00 pm</span>
-    <span class="pill">Pilates 7:00 pm</span>
-  </div>
-  <div class="evt-info rv d2">
-    <div class="evt-info__row">
-      <div class="evt-info__cell"><span class="evt-info__lbl">Lugar</span><span class="evt-info__val">El Toque</span></div>
-      <div class="evt-info__cell"><span class="evt-info__lbl">Vestimenta</span><span class="evt-info__val">Rosados, beige y marrones</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="evt-prev evt-prev--past">
-  <span class="eyebrow rv">Eventos que ha habido</span>
-  <h2 class="evt-prev__title rv d1">Sintonía<br/><em>Femenina</em></h2>
-  <p class="evt-prev__desc rv d2">Una inmersión profunda en los temas que nadie nos enseñó, desde la ciencia y la experiencia real.</p>
-  <div class="pills rv d1">
-    <span class="pill">Desajustes Hormonales</span>
-    <span class="pill">Amenorrea</span>
-    <span class="pill">Salud Mental</span>
-    <span class="pill">Biohacking Femenino</span>
-    <span class="pill">Alimentación Consciente</span>
-  </div>
-  <div class="evt-info rv d2">
-    <div class="evt-info__row">
-      <div class="evt-info__cell"><span class="evt-info__lbl">Fecha</span><span class="evt-info__val">25 Abril 2026</span></div>
-      <div class="evt-info__cell"><span class="evt-info__lbl">Lugar</span><span class="evt-info__val">La Wawa · Lechería</span></div>
-    </div>
-    <div class="evt-info__row">
-      <div class="evt-info__cell"><span class="evt-info__lbl">Formato</span><span class="evt-info__val">Brunch educativo</span></div>
-      <div class="evt-info__cell"><span class="evt-info__lbl">Cupos</span><span class="evt-info__val">Limitados</span></div>
-    </div>
-  </div>
-  <div class="evt-btns rv d3">
-    <a href="pages/evento.html" class="btn btn-out">Ver programa →</a>
-  </div>
-</section>
-
-<!-- SPONSORS -->
-<div class="sponsors rv">
-  <span class="sponsors__tag">Marcas patrocinantes confirmadas</span>
-  <div class="sponsors__list">
-    <div class="nologo">Minalba</div>
-    <img src="img/intylact.png" alt="Intilact">
-    <div class="nologo">NOW</div>
-    <div class="nologo">Jugando a Ganar</div>
-    <img src="img/conmariabonita.png" alt="conmariabonita">
-    <img src="img/acailovers.png" alt="Açaí Lovers">
-  </div>
-  <span class="sponsors__tag" style="margin-top:34px">Nos han acompañado antes</span>
-  <div class="sponsors__list">
-    <img src="img/patriciachacon.png" alt="Patricia Chacón">
-    <img src="img/cremigurt.png" alt="Cremigurt">
-    <img src="img/amatista.png" alt="Amatista">
-    <img src="img/dermolite.png" alt="Dermolite">
-    <img src="img/acailovers.png" alt="Acai Lovers">
-    <img src="img/galentines.png" alt="Galentines">
-    <img src="img/marea.png" alt="Marea">
-    <img src="img/halo.png" alt="HALO">
-    <img src="img/syf.png" alt="SYF">
-    <img src="img/healthy.png" alt="Healthy">
-    <img src="img/decogym.png" alt="Decogym">
-    <img src="img/lawawa.png" alt="La Wawa">
-    <img src="img/velaroma.png" alt="Velaroma">
-    <img src="img/santocha.png" alt="Santocha">
-  </div>
-</div>
-
-<!-- FOOTER -->
-<footer>
-  <span class="footer__brand">EM-PÁTICAS</span>
-  <p class="footer__slogan">el arte de sentirte comprendida</p>
-  <div class="footer__igs">
-    <a href="https://instagram.com/conmariabonita" target="_blank">@conmariabonita</a>
-    <span>·</span>
-    <a href="https://instagram.com/fitwithemi_" target="_blank">@fitwithemi_</a>
-  </div>
-  <p class="footer__copy">© 2026 EM-PÁTICAS · By Gabriella Wakil</p>
-  <div class="footer__signature">
-    <img src="img/gw.png" alt="GW Studios">
-    <span>@gw.studios_</span>
-  </div>
-</footer>
+  <p class="lt__foot rv d3"><a href="https://instagram.com/gw.studios_" target="_blank"><img src="img/gw.png" alt="GW Studios"/>By Gabriella Wakil · @gw.studios_</a></p>
+</main>
 
 <script src="js/reveal.js"></script>
 </body>
