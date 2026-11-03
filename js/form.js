@@ -1,4 +1,4 @@
-// form.js — compatible con Safari/iPhone ✅
+// form.js — compatible con Safari/iPhone 
 const btn = document.getElementById('submitBtn');
 
 // Crear modal de selección
@@ -20,13 +20,13 @@ function crearModal(onSelect) {
         style="display:block;width:100%;padding:12px;margin-bottom:10px;
                border:none;border-radius:10px;background:#25D366;color:#fff;
                font-size:1rem;cursor:pointer;font-weight:500">
-        📲 María
+         María
       </button>
       <button data-num="584248690086"
         style="display:block;width:100%;padding:12px;
                border:none;border-radius:10px;background:#128C7E;color:#fff;
                font-size:1rem;cursor:pointer;font-weight:500">
-        📲 Emely
+         Emely
       </button>
       <button id="cancelarModal"
         style="display:block;width:100%;padding:10px;margin-top:12px;
@@ -78,7 +78,7 @@ btn?.addEventListener('click', function (e) {
     const el = document.getElementById(id);
     return el?.value ? el.options[el.selectedIndex].text : 'No especificado';
   };
-  const msg = `✨ *INSCRIPCIÓN EM-PÁTICAS — Edición 1*
+  const msg = ` *INSCRIPCIÓN EM-PÁTICAS — Edición 1*
 *Nombre:* ${v('nombre')}
 *Teléfono:* ${v('tel')}
 *Edad:* ${v('edad')} años
@@ -93,7 +93,7 @@ _Evento: 25 de Abril 2026 · La Wawa · Lechería_`;
   crearModal(function (numero) {
     const url = `https://api.whatsapp.com/send?phone=${numero}&text=${encodeURIComponent(msg)}`;
 
-    // ✅ Safari-safe: <a> invisible con click() dentro del handler del usuario
+    //  Safari-safe: <a> invisible con click() dentro del handler del usuario
     const a = document.createElement('a');
     a.href = url;
     a.target = '_blank';
