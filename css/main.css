@@ -674,3 +674,11 @@ img{
 .lt__sponsors .lt__title{margin-bottom:16px}
 .lt__logos{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .lt__logos img{width:100%;height:64px;object-fit:contain;background:#c9ad97;border-radius:12px;padding:10px}
+
+/* ── LINK REGALOS PATROCINANTES ── */
+.wc-gift{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 20px;background:var(--peony-a);border:1.5px solid var(--peony);border-radius:14px;text-decoration:none;-webkit-tap-highlight-color:transparent}
+.wc-gift:active{opacity:.85;transform:scale(.98)}
+.wc-gift__txt{font-family:var(--serif);font-size:17px;line-height:1.35;color:var(--espresso)}
+.wc-gift__txt em{font-style:italic;color:var(--peony)}
+.wc-gift__cta{flex-shrink:0;font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--white);background:var(--espresso);border-radius:100px;padding:9px 16px}
+.wc-gift{margin-top:18px}
