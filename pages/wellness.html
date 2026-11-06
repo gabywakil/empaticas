@@ -55,6 +55,11 @@
     .wc-price__lbl{font-size:9px;font-weight:500;letter-spacing:4px;text-transform:uppercase;color:var(--peony-l);opacity:.6;display:block;margin-bottom:4px}
     .wc-price__val{font-family:var(--serif);font-size:42px;font-weight:700;color:var(--white);line-height:1}
     .wc-price__note{font-size:11px;font-weight:400;color:var(--peony-l);opacity:.5;text-align:right;max-width:100px;line-height:1.5}
+    .wc-gift{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 20px;background:var(--peony-a);border:1.5px solid var(--peony);border-radius:14px;text-decoration:none;-webkit-tap-highlight-color:transparent}
+    .wc-gift:active{opacity:.85;transform:scale(.98)}
+    .wc-gift__txt{font-family:var(--serif);font-size:17px;line-height:1.35;color:var(--espresso)}
+    .wc-gift__txt em{font-style:italic;color:var(--peony)}
+    .wc-gift__cta{flex-shrink:0;font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--white);background:var(--espresso);border-radius:100px;padding:9px 16px}
     .sp-name{display:grid;place-items:center;height:95px;background:#c9ad97;border-radius:16px;padding:16px;font-family:var(--serif);font-size:20px;color:var(--espresso);text-align:center;line-height:1.1}
   </style>
 </head>
@@ -73,6 +78,7 @@
 
 <div class="wc-info rv d1">
   <div class="wc-info__grid">
+    <div class="wc-info__row"><div><span class="wc-info__label">Fecha</span><span class="wc-info__val">29 Noviembre 2026</span></div></div>
     <div class="wc-info__row"><div><span class="wc-info__label">Lugar</span><span class="wc-info__val">Marea Club de Playa</span></div></div>
     <div class="wc-info__row"><div><span class="wc-info__label">Desde</span><span class="wc-info__val">4:00 pm</span></div></div>
     <div class="wc-info__row"><div><span class="wc-info__label">Clase</span><span class="wc-info__val">Pilates indoor · aire acondicionado</span></div></div>
@@ -83,6 +89,13 @@
 <div class="wc-includes rv d1" style="background:var(--espresso)">
   <h2 class="wc-includes__title" style="color:var(--white)">Merch exclusiva <em style="color:var(--peony-l)">alert</em></h2>
   <p style="font-size:14px;line-height:1.8;color:var(--white);opacity:.85">¡Regalo especial para las primeras 40 entradas! Las primeras 40 chicas en asegurar su cupo recibirán merch oficial de EM-PÁTICAS (piezas exclusivas de nuestra línea de ropa). ¡Corre a inscribirte antes de que se agoten!</p>
+</div>
+
+<div style="padding:24px 24px 0;background:var(--cream)" class="rv d1">
+  <a href="regalos.html" class="wc-gift">
+    <span class="wc-gift__txt">¿Quieres recibir regalos de <em>nuestros patrocinantes?</em></span>
+    <span class="wc-gift__cta">Haz click</span>
+  </a>
 </div>
 
 <div class="wc-includes rv d1">
@@ -106,6 +119,7 @@
     <div class="wc-includes__item"><span>Hidratación continua durante todo el evento</span></div>
     <div class="wc-includes__item"><span>Cóctel de bienvenida</span></div>
     <div class="wc-includes__item"><span>Comida saludable</span></div>
+    <div class="wc-includes__item"><span>Actividad de arte terapia frente al mar</span></div>
     <div class="wc-includes__item"><span>Degustación de postres y productos saludables en los stands</span></div>
     <div class="wc-includes__item"><span>Rifas especiales de marcas aliadas</span></div>
     <div class="wc-includes__item"><span>Detalles y obsequios de marcas patrocinantes</span></div>
