@@ -55,6 +55,16 @@
     .wc-price__lbl{font-size:9px;font-weight:500;letter-spacing:4px;text-transform:uppercase;color:var(--peony-l);opacity:.6;display:block;margin-bottom:4px}
     .wc-price__val{font-family:var(--serif);font-size:42px;font-weight:700;color:var(--white);line-height:1}
     .wc-price__note{font-size:11px;font-weight:400;color:var(--peony-l);opacity:.5;text-align:right;max-width:100px;line-height:1.5}
+    .inc-sec{background:var(--white);padding:32px 24px 36px;border-bottom:1px solid var(--cream3)}
+    .inc-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 14px;align-items:start}
+    .inc-card{display:flex;flex-direction:column;gap:10px;margin:0}
+    .inc-card__img{position:relative;aspect-ratio:1/1;border-radius:16px;overflow:hidden;background:var(--cream2);box-shadow:0 6px 18px rgba(44,24,16,.08)}
+    .inc-card__img img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .6s var(--ease)}
+    .inc-card:active .inc-card__img img{transform:scale(1.04)}
+    .inc-card__cap{font-size:13px;font-weight:400;line-height:1.45;color:var(--espresso2);text-align:center;padding:0 2px}
+    .inc-card--wide{grid-column:1/-1}
+    .inc-card--wide .inc-card__img{aspect-ratio:2/1}
+    .inc-card__ph{width:100%;height:100%;display:grid;place-items:center;background:linear-gradient(135deg,var(--peony-l),var(--cream3));color:var(--peony)}
     .sp-name{display:grid;place-items:center;height:95px;background:#c9ad97;border-radius:16px;padding:16px;font-family:var(--serif);font-size:20px;color:var(--espresso);text-align:center;line-height:1.1}
   </style>
 </head>
@@ -99,22 +109,61 @@
   </div>
 </div>
 
-<div class="wc-includes rv d1" style="background:var(--white)">
+<div class="inc-sec rv d1">
   <h2 class="wc-includes__title">Tu entrada <em>incluye</em></h2>
-  <div class="wc-includes__list">
-    <div class="wc-includes__item"><span>La clase de pilates indoor, en el horario que escojas</span></div>
-    <div class="wc-includes__item"><span>Tu mat de pilates (no necesitas traer el tuyo)</span></div>
-    <div class="wc-includes__item"><span>Kit con regalos exclusivos de todos nuestros patrocinantes</span></div>
-    <div class="wc-includes__item"><span>Hidratación continua durante todo el evento</span></div>
-    <div class="wc-includes__item"><span>Cóctel de bienvenida</span></div>
-    <div class="wc-includes__item"><span>Comida saludable</span></div>
-    <div class="wc-includes__item"><span>Actividad de arte terapia frente al mar</span></div>
-    <div class="wc-includes__item"><span>Degustación de postres y productos saludables en los stands</span></div>
-    <div class="wc-includes__item"><span>Rifas especiales de marcas aliadas</span></div>
-    <div class="wc-includes__item"><span>Detalles y obsequios de marcas patrocinantes</span></div>
-    <div class="wc-includes__item"><span>Fotos con fotógrafo profesional durante todo el evento</span></div>
-    <div class="wc-includes__item"><span>Acceso total y sin costo a las actividades del área de afuera</span></div>
-    <div class="wc-includes__item"><span>Participación en el Challenge del Reel Recap</span></div>
+  <div class="inc-grid">
+    <figure class="inc-card">
+      <div class="inc-card__img"><img src="../img/incluye/inc-clase.jpg" alt="Clase de pilates frente al mar" loading="lazy" width="800" height="800"></div>
+      <figcaption class="inc-card__cap">La clase de pilates indoor, en el horario que escojas</figcaption>
+    </figure>
+    <figure class="inc-card">
+      <div class="inc-card__img"><img src="../img/incluye/inc-mat.jpg" alt="Mat de pilates rosa" loading="lazy" width="800" height="800"></div>
+      <figcaption class="inc-card__cap">Tu mat de pilates (no necesitas traer el tuyo)</figcaption>
+    </figure>
+    <figure class="inc-card">
+      <div class="inc-card__img"><img src="../img/incluye/inc-kit.jpg" alt="Kit de regalos de patrocinantes" loading="lazy" width="800" height="800"></div>
+      <figcaption class="inc-card__cap">Kit con regalos exclusivos de todos nuestros patrocinantes</figcaption>
+    </figure>
+    <figure class="inc-card">
+      <div class="inc-card__img"><img src="../img/incluye/inc-hidratacion.jpg" alt="Agua fría con limón y menta" loading="lazy" width="800" height="800"></div>
+      <figcaption class="inc-card__cap">Hidratación continua durante todo el evento</figcaption>
+    </figure>
+    <figure class="inc-card">
+      <div class="inc-card__img"><img src="../img/incluye/inc-coctel.jpg" alt="Cóctel rosado de bienvenida" loading="lazy" width="800" height="800"></div>
+      <figcaption class="inc-card__cap">Cóctel de bienvenida</figcaption>
+    </figure>
+    <figure class="inc-card">
+      <div class="inc-card__img"><img src="../img/incluye/inc-comida.jpg" alt="Bowl de comida saludable" loading="lazy" width="800" height="800"></div>
+      <figcaption class="inc-card__cap">Comida saludable</figcaption>
+    </figure>
+    <figure class="inc-card">
+      <div class="inc-card__img"><img src="../img/incluye/inc-arte.jpg" alt="Arte terapia con acuarelas frente al mar" loading="lazy" width="800" height="800"></div>
+      <figcaption class="inc-card__cap">Actividad de arte terapia frente al mar</figcaption>
+    </figure>
+    <figure class="inc-card">
+      <div class="inc-card__img"><img src="../img/incluye/inc-degustacion.jpg" alt="Stand de degustación de postres saludables" loading="lazy" width="800" height="800"></div>
+      <figcaption class="inc-card__cap">Degustación de postres y productos saludables en los stands</figcaption>
+    </figure>
+    <figure class="inc-card">
+      <div class="inc-card__img"><img src="../img/incluye/inc-rifas.jpg" alt="Regalos y rifas de marcas aliadas" loading="lazy" width="800" height="800"></div>
+      <figcaption class="inc-card__cap">Rifas especiales de marcas aliadas</figcaption>
+    </figure>
+    <figure class="inc-card">
+      <div class="inc-card__img"><img src="../img/incluye/inc-detalles.jpg" alt="Bandeja de obsequios de marcas" loading="lazy" width="800" height="800"></div>
+      <figcaption class="inc-card__cap">Detalles y obsequios de marcas patrocinantes</figcaption>
+    </figure>
+    <figure class="inc-card inc-card--wide">
+      <div class="inc-card__img"><img src="../img/incluye/inc-fotografo.jpg" alt="Fotógrafa profesional retratando a un grupo de mujeres en la playa al atardecer" loading="lazy" width="800" height="800" style="object-position:center 30%"></div>
+      <figcaption class="inc-card__cap">Fotos con fotógrafo profesional durante todo el evento</figcaption>
+    </figure>
+    <figure class="inc-card">
+      <div class="inc-card__img"><img src="../img/incluye/inc-acceso.jpg" alt="Terraza con masajes, jacuzzi y zona de relax" loading="lazy" width="800" height="800"></div>
+      <figcaption class="inc-card__cap">Acceso total y sin costo a las actividades del área de afuera</figcaption>
+    </figure>
+    <figure class="inc-card">
+      <div class="inc-card__img"><img src="../img/incluye/inc-reel.jpg" alt="Grabando el Reel Recap al atardecer" loading="lazy" width="800" height="800"></div>
+      <figcaption class="inc-card__cap">Participación en el Challenge del Reel Recap</figcaption>
+    </figure>
   </div>
 </div>
 
